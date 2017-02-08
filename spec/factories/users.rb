@@ -1,9 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    email "MyString"
-    password_digest "MyString"
+    first_name "Bob"
+    last_name "Dylan"
+    email "bob@gmail.com"
+    password_digest "1234"
     image "MyString"
-    role 1
+    role 0
   end
 end

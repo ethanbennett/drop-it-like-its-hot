@@ -10,13 +10,18 @@
     <div class="col s6">
     <%= image_tag("dropbox_possibility_box.png", class:"possibility-box") %>
     </div
-    <form class="col s6">
-      <div class="input-field">
-        <div class="input-field col s3">
-          <input placeholder="Email" type="text" class="validate login-email right">
 
+      <%= form_tag @sessions_path do %>
+        <div class="input-field col s3">
+          <%= text_field_tag :email %>
         </div>
-      </div>
+        <div class="input-field col s3">
+          <%= text_field_tag :password %>
+        </div>
+        <div class="input-field col s3">
+          <%= submit_tag "Sign in" %>
+        </div>
+      <% end %>
     </form>
   </div>
 </div>
