@@ -11,10 +11,9 @@ describe "When a user visits the landing page" do
     fill_in :user_email, :with => "bob@gmail.com"
     fill_in :user_password, :with => "1234"
     check :user_agrees
-
     click_on "Create an account"
 
-    expect(current_path).to eq home_path
+    expect(current_path).to eq home_index_path
     within ".nav-wrapper" do
       expect(page).to have_link "Bob Dylan"
     end
