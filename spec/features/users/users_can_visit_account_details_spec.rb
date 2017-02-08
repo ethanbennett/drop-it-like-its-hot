@@ -11,6 +11,11 @@ RSpec.describe 'User can visit account details' do
       expect(page).to have_content("Profile")
       expect(page).to have_content("Security")
       expect(page).to have_content("Account")
+
+      within("#profile") do
+        expect(page).to have_content(user.first_name)
+        expect(page).to have_content(user.last_name)
+      end
     end
   end
 end
