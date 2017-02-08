@@ -1,8 +1,26 @@
 .nav-wrapper {
-  background-color: $dropbox-blue;
+  background-color: $white;
   height: 69px;
 }
 img {
     padding-top:7px;
     height: 35px;
+}
+
+.menu-text{
+  color: $dropbox-blue;
+}
+
+.move-right{
+  width: 10%;
+  margin-left: 17%;
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline;
+  background-color: $white;
+  border-color: $dropbox-blue;
+  box-shadow: none;
+  border-width: 5px;
+  border-radius: 10px;
 }
