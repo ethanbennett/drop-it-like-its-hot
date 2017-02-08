@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208172419) do
+ActiveRecord::Schema.define(version: 20170208171909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "repos", force: :cascade do |t|
     t.string   "type"
-    t.integer  "parent_id"
+    t.integer  "repo_id"
     t.string   "name"
     t.string   "aws_url"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_repos_on_parent_id", using: :btree
+    t.index ["repo_id"], name: "index_repos_on_repo_id", using: :btree
     t.index ["user_id"], name: "index_repos_on_user_id", using: :btree
   end
 
@@ -37,6 +37,6 @@ ActiveRecord::Schema.define(version: 20170208172419) do
     t.datetime "updated_at",                  null: false
   end
 
-  add_foreign_key "repos", "repos", column: "parent_id"
+  add_foreign_key "repos", "repos"
   add_foreign_key "repos", "users"
 end
