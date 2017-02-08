@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Repo, type: :model do
+RSpec.describe Folder, type: :model do
   describe "relationships" do
-    it {should belong_to(:repo)}
     it {should have_many(:repos)}
+    # it {should have_many(:documents)}
   end
 end
