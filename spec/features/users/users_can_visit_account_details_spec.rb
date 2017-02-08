@@ -4,8 +4,9 @@ RSpec.describe 'User can visit account details' do
   context 'Profile tab' do
   let(:user) {create(:user)}
     scenario 'Shown as default selection' do
+      # login user
+      session[:user_id] = user.id
       byebug
-      login user
       # visit 
     end
   end

@@ -4,15 +4,15 @@ FactoryGirl.define do
     last_name "Lastname"
     email "test@test.com"
     image "link"
-    password_digest "MyString"
+    password_digest "password"
     role 0
   end
-    factory :user_admin, class: User do
+  factory :admin, class: User do
     first_name "Firstname"
     last_name "Lastname"
     email "test@test.com"
     image "link"
-    password_digest "MyString"
+    password_digest "password"
     role 1
-    end
+  end
 end
