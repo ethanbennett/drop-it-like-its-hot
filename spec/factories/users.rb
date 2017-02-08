@@ -4,7 +4,7 @@ FactoryGirl.define do
     last_name "Lastname"
     email "test@test.com"
     image "link"
-    password_digest "password"
+    password "password"
     role 0
   end
   factory :admin, class: User do
@@ -12,7 +12,7 @@ FactoryGirl.define do
     last_name "Lastname"
     email "test@test.com"
     image "link"
-    password_digest "password"
+    password "password"
     role 1
   end
 end

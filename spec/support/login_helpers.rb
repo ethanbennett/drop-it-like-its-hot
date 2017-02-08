@@ -4,8 +4,8 @@ module LoginHelpers
 
     click_on "Sign in"
 
-    fill_in :user[email], with: account.email
-    fill_in :user[password], with: "password"
+    fill_in :email, with: account.email
+    fill_in :password, with: "password"
 
     click_on "Sign in"
   end
