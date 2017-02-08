@@ -3,4 +3,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :email, :role, presence: true
 
   enum role: [ :user, :admin ]
+
+  attr_accessor   :agrees
+
 end
