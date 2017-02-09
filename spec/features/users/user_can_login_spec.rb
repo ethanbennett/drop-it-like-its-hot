@@ -19,6 +19,20 @@ describe "When a user click on sign in" do
     end
     expect(page).to have_content "Files"
     expect(page).to have_content "Photos"
+  end
 
+  scenario "they need to reenter their information" do
+    user = create(:user)
+    
+    visit root_path
+
+    click_on "Sign in"
+
+    fill_in :email, :with => user.email
+    fill_in :password, :with => "1111"
+
+    click_on "Sign in"
+
+    expect(current_path).to eq login_path
   end
 end
