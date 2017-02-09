@@ -29,7 +29,12 @@
         </div>
       </div>
     </div>
-    <div id="account" class="col s12">Account</div>
+    <div id="account" class="col s12">
+      <h5>Space</h5>
+      <div class="progress">
+        <div class="determinate" style="width: <%= @user_dashboard.used_space_percent%>"></div>
+      </div>
+    </div>
     <div id="security" class="col s12">Security</div>
   </div>
 </div>

@@ -10,4 +10,8 @@ class UserDashboard
   def email
     @_user.email
   end
+
+  def used_space_percent
+    "25%"
+  end
 end
