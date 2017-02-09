@@ -14,7 +14,7 @@
       </div>
       <div class = "row">
         <div class = "row col s3 account-photo">
-          <h5>Account photo</h5>
+          <h6>Account photo</h6>
           <div class = "col s6">
             <img>
           </div>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class = "row col s9 account-email">
-          <h5>Personal email</h5>
+          <h6>Personal email</h6>
           <p><%= @user_dashboard.email %></p>
           <p><%= link_to "Change email", "#" %></p>
         </div>
@@ -35,6 +35,22 @@
         <div class="determinate" style="width: <%= @user_dashboard.used_space_percent%>"></div>
       </div>
     </div>
-    <div id="security" class="col s12">Security</div>
+    <div id="security" class="col s12">
+      <h5>Dropbox</h5>
+      <div class="row account-password">
+        <h6>Password</h6>
+        <p><%= link_to "Change password", "#" %></p>
+        <p><%= link_to "Forgot password?", "#" %></p>
+      </div>
+      <div class="row account-verification">
+        <h6>Two-step verification</h6>
+        <div class="col s2">
+          <p>Status</p>
+        </div>
+        <div class="col s10">
+          <p><%= @user_dashboard.two_step_status %> <%= link_to "(click to enable)", "#" %></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

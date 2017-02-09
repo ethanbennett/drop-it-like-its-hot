@@ -49,4 +49,25 @@ RSpec.describe 'User can visit account details' do
       end
     end
   end #End of context Account tab
+
+  context 'Privacy tab' do
+    it 'Shows Account Security details' do
+      login user
+
+      visit account_index_path
+
+      within("#security") do
+        within(".account-password") do
+          expect(page).to have_content("Password")
+          expect(page).to have_link("Change password")
+          expect(page).to have_link("Forgot password?")
+        end
+        within(".account-verification") do
+          expect(page).to have_content("Two-step verification")
+          expect(page).to have_content("Status")
+          expect(page).to have_link("click to enable")
+        end
+      end
+    end
+  end #End of context Privacy tab
 end

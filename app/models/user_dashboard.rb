@@ -14,4 +14,8 @@ class UserDashboard
   def used_space_percent
     "25%"
   end
+
+  def two_step_status
+    "Disabled"
+  end
 end
