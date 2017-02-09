@@ -6,4 +6,8 @@ class UserDashboard
   def fullname
     "#{@_user.first_name} #{@_user.last_name}"
   end
+
+  def email
+    @_user.email
+  end
 end
