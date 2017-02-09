@@ -1,12 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.from_omniauth(env["omniauth.auth"])
-    if user.email && user.password
-      redirect_to action: "create", 
-    else
-    else
-      render :new
-
   end
 
   def create
