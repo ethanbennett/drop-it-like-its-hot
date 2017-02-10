@@ -2,11 +2,12 @@ class User < ApplicationRecord
   has_many :repos
 
   has_secure_password
+  validates_acceptance_of :terms
   validates :first_name, :last_name, :email, :role, presence: true
 
   enum role: [ :user, :admin ]
 
-  attr_accessor   :agrees
+  # attr_accessor :terms
 
   def self.from_omniauth(auth)
     user = User.find_or_create_by(email: auth["info"]["email"])
