@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_agreed?, only: [:create]
+  
   extend CodeGenerator
   extend ConfirmationSender
   extend MessageSender
@@ -33,4 +34,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  
 end
