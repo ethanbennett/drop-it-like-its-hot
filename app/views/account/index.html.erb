@@ -1,0 +1,64 @@
+<div class = "container row">
+  <h1>Settings</h1>
+    <div class="row">
+    <div class="col s12" id="all-tabs">
+      <ul class="tabs">
+        <li class="tab"><a id="tab-profile-link" class="active" href="#profile">Profile</a></li>
+        <li class="tab"><a id="tab-account-link" href="#account">Account</a></li>
+        <li class="tab"><a id="tab-security-link" href="#security">Security</a></li>
+      </ul>
+    </div>
+
+    <div class = "col s12 all-tab-details">
+
+    <div id="profile" class="col s12 account-detail">
+      <div class = "row account-name">
+        <h2><%= @user_dashboard.fullname %> <%= link_to "Change", "#" %></h2>
+      </div>
+      <div class = "row">
+        <div class = "row col s3 account-photo">
+          <h3>Account photo</h3>
+          <div class = "col s6">
+            <img>
+          </div>
+          <div class = "col s6">
+            <p><%= link_to "Add photo", "#" %></p>
+          </div>
+        </div>
+        <div class = "row col s9 account-email">
+          <h3>Personal email</h3>
+          <div>
+            <%= @user_dashboard.email %>
+          </div>
+          <%= link_to "Change email", "#" %>
+        </div>
+      </div>
+    </div>
+    <div id="account" class="col s12 account-detail">
+      <h2>Space</h2>
+      <div class="progress">
+        <div class="determinate" style="width: <%= @user_dashboard.used_space_percent%>"></div>
+      </div>
+    </div>
+    <div id="security" class="col s12 account-detail">
+      <h2>Dropbox</h2>
+      <div class="col s12 account-password">
+        <h3>Password</h3>
+        <p><%= link_to "Change password", "#" %></p>
+        <p><%= link_to "Forgot password?", "#" %></p>
+      </div>
+      <div class="col s12 account-verification">
+        <h3>Two-step verification</h3>
+        <div class="col s2">
+          <p>Status</p>
+        </div>
+        <div class="col s10">
+          <p><%= @user_dashboard.two_step_status %> <%= link_to "(click to enable)", "#" %></p>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+  </div>
+</div>

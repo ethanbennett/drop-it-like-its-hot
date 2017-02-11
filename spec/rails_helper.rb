@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rails'
+require 'support/factory_girl'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -81,4 +82,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include LoginHelpers, type: :feature
+
 end

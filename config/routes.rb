@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new,:create]
   resources :home, only: [:index]
 
+  resources :account, only: [:index]
+
 end
