@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+    <div class="input-field col s3">
+      <%= f.text_field :first_name, placeholder:"First name", type:"text", class:"validate"%>
+    </div>
+    <div class="input-field col s3">
+      <%= f.text_field :last_name, placeholder:"Last name", type:"text", class:"validate"%>
+    </div>
+    <div class="input-field col s3">
+      <%= f.email_field :email, placeholder:"Email", type:"text", class:"validate"%>
+    </div>
+    <div class="input-field col s3">
+      <%= f.password_field :password, placeholder:"Password", type:"text", class:"validate"%>
+    </div>
+    <div class="input-field col s3">
+    <%= f.check_box :agrees,  type:"text", class:"validate"%>
+      <%= f.label "I agree to Dropbox terms." %>
+    </div>
+
+    <%= f.submit "Create an account" %>
+<% end %>
