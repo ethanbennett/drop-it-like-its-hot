@@ -36,7 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
 gem 'faraday'
-
+gem 'carrierwave'
 gem 'aws-sdk', '~> 2'
 
 
