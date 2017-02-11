@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :user_agreed?, only: [:create]
+  before_action :user_agreed?, only: [:create]
   extend CodeGenerator
   extend ConfirmationSender
   extend MessageSender
@@ -9,8 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    verification_code = CodeGenerator.generate
-    byebug
+    # verification_code = CodeGenerator.generate
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -29,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def user_agreed?
-    unless params[:user][:agrees]
+    unless params[:user][:checkbox]
       flash[:danger] = "Please agree to terms and conditions"
       render :new
     end

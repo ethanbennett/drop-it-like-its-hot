@@ -1,3 +1,5 @@
+
+
 <%= form_for @user do |f| %>
     <div class="input-field col s3">
       <%= f.text_field :first_name, placeholder:"First name", type:"text", class:"validate"%>
@@ -11,11 +13,13 @@
     <div class="input-field col s3">
       <%= f.password_field :password, placeholder:"Password", type:"text", class:"validate"%>
     </div>
-    <div class="container">
-    <br>
-      <input type="checkbox" class="filled-in" id="filled-in-box"  />
-      <label for="filled-in-box">I agree to Dropbox terms.</label>
-    <br><br><br>
+
+
+    <div class="input-field col s3">
+      <p><%= f.check_box :checkbox, type:"checkbox", include_hidden: false, class:"filled-in", id:"filled-in-box" %> I agree to Dropbox terms.</p>
     </div>
+
+    
+    
     <%= f.submit "Create an account" %>
 <% end %>

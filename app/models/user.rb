@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   enum role: [ :user, :admin ]
 
-  # attr_accessor :terms
+  attr_accessor :checkbox
 
   def self.from_omniauth(auth)
     user = User.find_or_create_by(email: auth["info"]["email"])
