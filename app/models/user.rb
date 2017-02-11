@@ -14,7 +14,7 @@ class User < ApplicationRecord
     user.first_name = auth["info"]["name"].split(" ").first
     user.last_name  = auth["info"]["name"].split(" ").last
     user.email      = auth["info"]["email"]
-    user.password   = rand(1000000...10000000).to_s
+    user.password   ||= rand(1000000...10000000).to_s
     user.role       = "user"
     user.save
     user

@@ -15,6 +15,6 @@ describe OauthsController do
   end
 
   it "should redirect a user to the home page" do
-    expect(response).to redirect_to home_index_path
+    expect(response).to redirect_to new_phone_verification_path
   end
 end

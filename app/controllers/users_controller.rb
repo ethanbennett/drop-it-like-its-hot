@@ -9,11 +9,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    # verification_code = CodeGenerator.generate
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to home_index_path
+      redirect_to new_phone_verification_path
     else
       flash[:danger] = @user.errors.full_messages.first
       render :new
@@ -30,6 +29,7 @@ class UsersController < ApplicationController
   def user_agreed?
     unless params[:user][:checkbox]
       flash[:danger] = "Please agree to terms and conditions"
+      @user = User.new(user_params)
       render :new
     end
   end

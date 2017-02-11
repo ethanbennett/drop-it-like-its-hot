@@ -14,7 +14,7 @@ describe "When a use tries to login" do
 
     expect(page). to have_content "Please enter your verification code below."
 
-    fill_in :verification_code, :with => "1234"
+    fill_in :verification_code, :with => "123"
 
     click_on "Submit"
 

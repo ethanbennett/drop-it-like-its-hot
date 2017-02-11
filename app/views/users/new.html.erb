@@ -14,12 +14,10 @@
       <%= f.password_field :password, placeholder:"Password", type:"text", class:"validate"%>
     </div>
 
-
     <div class="input-field col s3">
       <p><%= f.check_box :checkbox, type:"checkbox", include_hidden: false, class:"filled-in", id:"filled-in-box" %> I agree to Dropbox terms.</p>
     </div>
-
-    
-    
-    <%= f.submit "Create an account" %>
+    <div class="input-field col s3">
+      <%= f.submit "Create an account" %>
+    </div>
 <% end %>

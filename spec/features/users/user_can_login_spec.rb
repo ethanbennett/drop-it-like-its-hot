@@ -13,12 +13,7 @@ describe "When a user click on sign in" do
 
     click_on "Sign in"
 
-    expect(current_path).to eq home_index_path
-    within ".nav-wrapper" do
-      expect(page).to have_link "Bob Dylan"
-    end
-    expect(page).to have_content "Files"
-    expect(page).to have_content "Photos"
+    expect(current_path).to eq new_phone_verification_path
   end
 
   scenario "they need to reenter their information" do
