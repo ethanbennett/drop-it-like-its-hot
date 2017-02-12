@@ -1,11 +1,10 @@
 class HomeController < ApplicationController
   before_action :set_s3_direct_post, only: [:index]
 
-  def new
-  end
+
 
   def index
-    current_repo
+    @repo = Repo.new
   end
 
 
