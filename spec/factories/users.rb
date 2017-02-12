@@ -15,4 +15,10 @@ FactoryGirl.define do
     password "password"
     role 1
   end
+
+  # factory :user_with_repos, class: User do
+  #   user
+  #   user.repos << create(:folder)
+  #   user.repos << create(:document)
+  # end
 end
