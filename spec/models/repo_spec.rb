@@ -7,7 +7,7 @@ RSpec.describe Repo, type: :model do
   end
 
   describe "folders and documents" do
-    it "can't be contained within a document" do
+    it "behave differently as repos" do
       folder   = create(:folder)
       document = create(:document)
       folder.repos << document
