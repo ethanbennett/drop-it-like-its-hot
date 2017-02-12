@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     resources :repos, only: [:index, :show, :create]
   end
 
+  get "/get_repo", to: "repos#get_repo"
   resources :account, only: [:index]
-  get "/aws-test", to: "awstest#index"
 end
