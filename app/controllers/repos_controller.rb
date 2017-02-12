@@ -10,11 +10,17 @@ class ReposController < ApplicationController
 
   def create
     repo = Repo.new(repo_params)
+    current_user.repos << repo
+    current_repo.repos << repo
     if repo.save
-      redirect_to home_index_path
+      respond_to do |format|
+        format.html { redirect_to home_index_path, notice: 'Repo was successfully created.' }
+        format.json { render :index, status: :created, location: @user }
+      end
     end
   end
-
+  
+  
   private
 
     def repo_params

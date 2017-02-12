@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   def index
     @repo = Repo.new
+    @repos = Repo.where(repo_id: current_repo)
   end
 
 

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root "landing#show"
   get   "/login", to: "sessions#new"
-  resources :users, only: [:new,:create]
+  resources :users, only: [:new,:create] do
+  end
   post  "/login", to: "sessions#create"
   get   "/auth/google_oauth2/callback", to: "oauths#create"
 
