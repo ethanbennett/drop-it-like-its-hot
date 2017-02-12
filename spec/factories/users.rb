@@ -9,11 +9,11 @@ FactoryGirl.define do
 
     factory :user_with_repos do
       after(:create) do |user|
-        create(:folder_with_documents, user: user)
+        create(:folder_with_documents, user_id: user.id)
       end
     end
   end
-  
+
   factory :admin, class: User do
     first_name "Firstname"
     last_name "Lastname"
@@ -22,10 +22,4 @@ FactoryGirl.define do
     password "password"
     role 1
   end
-
-  # factory :user_with_repos, class: User do
-  #   user
-  #   user.repos << create(:folder)
-  #   user.repos << create(:document)
-  # end
 end
