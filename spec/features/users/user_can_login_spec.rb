@@ -13,7 +13,7 @@ describe "When a user click on sign in" do
 
     click_on "Sign in"
 
-    expect(current_path).to eq new_phone_verification_path
+    expect(current_path).to eq user_repos_path(user)
   end
 
   scenario "they need to reenter their information" do
