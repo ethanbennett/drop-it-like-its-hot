@@ -35,7 +35,7 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem 'twilio-ruby', '~> 4.11.1'
 gem 'aws-sdk', '~> 2'
-gem 'addressable''
+gem 'addressable'
 
 
 # Use Capistrano for deployment
@@ -43,7 +43,6 @@ gem 'addressable''
 gem 'figaro'
 gem 'faraday'
 gem 'carrierwave'
-gem 'aws-sdk', '~> 2'
 
 
 group :development, :test do

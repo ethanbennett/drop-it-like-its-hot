@@ -22,9 +22,12 @@ class ReposController < ApplicationController
 
   def get_repo
     repo = Repo.find(params[:id])
-    url = URI.parse(URI.encode("https:#{repo.aws_url}"))
+    #we need to sanitize the aws url to work with special characters
+    # url = URI.parse(URI.encode("https:#{repo.aws_url}"))
     # url = "https:#{repo.aws_url}"
-    data = open(url)
+    # url = Addressable::URI.parse("https:#{repo.aws_url}")
+    # url = url.normalize
+    data = open("https:#{repo.aws_url}")
     send_data data.read, :filename => "test.jpg"
   end
   
