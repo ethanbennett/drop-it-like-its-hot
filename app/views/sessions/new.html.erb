@@ -9,16 +9,19 @@
     <div class="col s6">
     <%= image_tag("dropbox_possibility_box.png", class:"possibility-box") %>
     </div>
-    <%= form_tag("/logins", method: "post") do %>
-        <div class="input-field col s3">
+    <div class="col s3 login-info ">
+      <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+      <%= form_tag login_path, method: "post" do %>
+        <div class="input-field">
           <%= text_field_tag :email %>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field">
           <%= text_field_tag :password %>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field">
           <%= submit_tag "Sign in" %>
         </div>
     <% end %>
+    </div>
   </div>
 </div>
