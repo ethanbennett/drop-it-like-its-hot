@@ -7,9 +7,5 @@ class User < ApplicationRecord
   enum role: [ :user, :admin ]
 
   attr_accessor   :agrees
-
-  def self.root_content
-    repos.where(repo_id: nil)
-  end
 end
 
