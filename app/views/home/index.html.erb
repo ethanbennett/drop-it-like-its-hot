@@ -43,3 +43,9 @@
       </table>
     </div>
   </div>
+
+<%= form_for(@repo, :url => home_index_path, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+
+    <%= f.label :aws_url %>
+    <%= f.file_field :aws_url, class: 'dropzone' %>
+  <% end %>
