@@ -1,12 +1,11 @@
 class ReposController < ApplicationController
-  before_action :set_user
 
   def index
-    @content = @user.repos.where(repo_id: nil)
+    @content = current_user.repos.where(repo_id: current_repo)
   end
 
   def show
-    @content = @user.repos.where(repo_id: params[:id])
+    @content = current_user.repos.where(repo_id: params[:id])
   end
 
 end
