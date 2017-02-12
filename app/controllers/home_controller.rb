@@ -5,8 +5,9 @@ class HomeController < ApplicationController
   end
 
   def index
-    @repo = Repo.new
+    current_repo
   end
+
 
   private
 
