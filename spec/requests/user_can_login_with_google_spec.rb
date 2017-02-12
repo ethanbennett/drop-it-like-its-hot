@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe OauthsController do
 
- before(:each) do
+  before(:each) do
     get "/auth/google_oauth2/callback"
   end
   

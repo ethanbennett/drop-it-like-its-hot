@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
+//= require jquery.ui.widget
+//= require z.jquery.fileupload
 //= require_tree .
 
 $(function() {

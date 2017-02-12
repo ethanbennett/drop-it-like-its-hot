@@ -42,6 +42,8 @@ gem 'aws-sdk', '~> 2'
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
 gem 'faraday'
+gem 'carrierwave'
+gem 'aws-sdk', '~> 2'
 
 
 group :development, :test do
@@ -54,6 +56,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
+  gem 'pry'
 end
 
 group :test do

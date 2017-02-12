@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   enum role: [ :user, :admin ]
 
+  attr_accessor   :agrees
   attr_accessor :checkbox
 
   def self.from_omniauth(auth)
@@ -19,6 +20,5 @@ class User < ApplicationRecord
     user.save
     user
   end
-
 end
 

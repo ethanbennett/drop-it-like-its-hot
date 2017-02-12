@@ -9,6 +9,4 @@ class ReposController < ApplicationController
     @content = @user.repos.where(repo_id: params[:id])
   end
 
-
-
 end
