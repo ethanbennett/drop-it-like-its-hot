@@ -9,9 +9,16 @@ FactoryGirl.define do
 
     factory :user_with_repos do
       after(:create) do |user|
-        create(:folder_with_documents, user_id: user.id)
+        create(:folder, user_id: user.id)
+      end
+
+      factory :user_with_repos_with_documents do
+        after(:create) do |user_with_repos|
+          create_list(:document, 2, repo_id: user_with_repos.repos.first.id, user_id: user_with_repos.id)
+        end
       end
     end
+
   end
 
   factory :admin, class: User do
