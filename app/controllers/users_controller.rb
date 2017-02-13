@@ -11,12 +11,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    repo = Repo.create(type: 'file')
+    repo = Repo.create(type: 'Folder')
     if @user.save
       session[:user_id] = @user.id
       session[:repo_id] = repo.id
-      user.repos << repo
-      redirect_to new_phone_verification_path
+      @user.repos << repo
+      redirect_to home_index_path
     else
       flash[:danger] = @user.errors.full_messages.first
       render :new
