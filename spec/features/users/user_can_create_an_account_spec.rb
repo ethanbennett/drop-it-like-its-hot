@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "When a user visits the landing page" do
-  xscenario "they can create an account" do
+  scenario "they can create an account" do
     visit root_path
 
     click_on "Create Account"

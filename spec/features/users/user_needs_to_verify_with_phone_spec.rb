@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "When a use tries to login" do
-  xscenario "they need to input an sms verification code" do
+  scenario "they need to input an sms verification code" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
