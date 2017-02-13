@@ -1,7 +1,3 @@
 <% @content.each do |repo| %>
-  <% if repo.type == "Folder" %>
-    <%= link_to "#{repo.name}", user_repo_path(@user, repo) %>
-  <% else %>
-    <%= repo.name %>
-  <% end %>
+  
 <% end %>

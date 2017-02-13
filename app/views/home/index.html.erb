@@ -31,18 +31,17 @@
     </div>
     <div class = "col s10">
     <% @repos.each do |repo| %>
+      <% if repo.type == "Folder" %>
       <table>
         <tr>
           <th><%= link_to repo.aws_url, repo_path(repo) %></th>
           <th><%= repo.updated_at %></th>
           <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
         </tr>
-        <tr>
-          <td>Sample name</td>
-          <td>Sample modified</td>
-          <td>Sample members</td>
-        </tr>
       </table>
+      <% else %>
+        <%= repo.aws_url %>
+      <% end %>
     <% end %>
     </div>
   </div>
