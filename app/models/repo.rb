@@ -1,8 +1,6 @@
 class Repo < ApplicationRecord
   include ActiveModel::Validations
-  
-  belongs_to :repo, optional: true
-  has_many :repos
+  belongs_to :folder, optional: true
   validates_with FolderValidator
 
   def self.set_s3_direct_post

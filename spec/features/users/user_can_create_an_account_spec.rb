@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "When a user visits the landing page" do
-  xscenario "they can create an account" do
+  scenario "they can create an account" do
     visit root_path
 
     click_on "Create Account"
@@ -12,7 +12,7 @@ describe "When a user visits the landing page" do
     fill_in :user_password, :with => "1234"
     check "filled-in-box"
     click_on "Create an account"
-    expect(current_path).to eq new_phone_verification_path
+    expect(current_path).to eq home_index_path
   end
 
   scenario "they need to reenter their information" do
