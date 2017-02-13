@@ -1,0 +1,6 @@
+<h3>What's your phone number?</h3>
+
+<%= form_tag phone_verification_path, method: "post" do %>
+  <%= text_field_tag :phone_number%>
+  <%= submit_tag "Submit" %>
+<% end %>

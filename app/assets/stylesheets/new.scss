@@ -4,8 +4,14 @@ img.possibility-box{
   margin-top: 130px;
   margin-left: 30%;
   display:inline;
+  float: right;
 }
 
-// .login-email{
-//   float:right;
-// };
+.login-info{
+  margin-top: 130px;
+}
+
+#filled-in-box{
+  opacity: 100;
+  position: unset;
+}

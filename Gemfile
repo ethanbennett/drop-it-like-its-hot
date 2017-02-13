@@ -31,11 +31,18 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem 'twilio-ruby', '~> 4.11.1'
+gem 'aws-sdk', '~> 2'
+gem 'addressable'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
 gem 'faraday'
+gem 'carrierwave'
 
 
 group :development, :test do
@@ -48,6 +55,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
+  gem 'pry'
 end
 
 group :test do

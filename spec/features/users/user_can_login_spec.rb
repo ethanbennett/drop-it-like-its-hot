@@ -13,12 +13,21 @@ describe "When a user click on sign in" do
 
     click_on "Sign in"
 
-    expect(current_path).to eq home_index_path
-    within ".nav-wrapper" do
-      expect(page).to have_link "Bob Dylan"
-    end
-    expect(page).to have_content "Files"
-    expect(page).to have_content "Photos"
+    expect(current_path).to eq user_repos_path(user)
+  end
 
+  scenario "they need to reenter their information" do
+    user = create(:user)
+    
+    visit root_path
+
+    click_on "Sign in"
+
+    fill_in :email, :with => user.email
+    fill_in :password, :with => "1111"
+
+    click_on "Sign in"
+
+    expect(current_path).to eq login_path
   end
 end

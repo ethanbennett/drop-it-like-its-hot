@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  # before_action :user_agreed?, only: [:create]
+  before_action :user_agreed?, only: [:create]
+  
+  extend CodeGenerator
+  extend ConfirmationSender
+  extend MessageSender
 
   def new
     @user = User.new
@@ -7,9 +11,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    session[:user_id] = @user.id
     if @user.save
-      redirect_to home_index_path
+      session[:user_id] = @user.id
+      redirect_to new_phone_verification_path
     else
       flash[:danger] = @user.errors.full_messages.first
       render :new
@@ -24,9 +28,11 @@ class UsersController < ApplicationController
   end
 
   def user_agreed?
-    unless params[:user][:agrees]
+    unless params[:user][:checkbox]
       flash[:danger] = "Please agree to terms and conditions"
+      @user = User.new(user_params)
       render :new
     end
   end
+
 end

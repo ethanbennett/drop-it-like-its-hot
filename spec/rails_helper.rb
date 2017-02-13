@@ -9,6 +9,8 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'support/factory_girl'
 
+require 'aws-sdk'
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
@@ -22,6 +24,17 @@ VCR.configure do |config|
   config.cassette_library_dir = "spec/vcr_cassettes"
   config.hook_into :webmock
 end
+
+OmniAuth.config.test_mode = true
+omniauth_hash = {'info' => {'name' => "Bob Dylan",
+                            'email' => "bob@gmail.com",
+                            'picture' => "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"
+                          }
+                  }
+
+OmniAuth.config.add_mock(:default, omniauth_hash)
+
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -42,6 +55,8 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  # config.include OauthMocking
+  
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
