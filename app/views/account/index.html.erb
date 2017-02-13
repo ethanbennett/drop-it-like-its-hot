@@ -9,11 +9,17 @@
       </ul>
     </div>
 
+
     <div class = "col s12 all-tab-details">
 
     <div id="profile" class="col s12 account-detail">
       <div class = "row account-name">
-        <h2><%= @user_dashboard.fullname %> <%= link_to "Change", "#" %></h2>
+        <h2><%= @user_dashboard.fullname %> <%= link_to "Change", "#change-username", class: "modal-trigger waves-effect waves-light" %></h2>
+         <!-- Modal Trigger -->
+        <a class="modal-trigger waves-effect waves-light btn" href="#change-username">Change</a>
+        <button data-target="change-username" class="btn">Change</button>
+        <%= render partial: "layouts/change_username" %>
+
       </div>
       <div class = "row">
         <div class = "row col s3 account-photo">
