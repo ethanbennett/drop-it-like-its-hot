@@ -33,9 +33,9 @@
     <% @repos.each do |repo| %>
       <table>
         <tr>
-          <th><%= link_to repo.aws_url, repo_path(get_repo_path) %></th>
+          <th><%= link_to repo.aws_url, repo_path(repo) %></th>
           <th><%= repo.updated_at %></th>
-          <th><%= link_to "Get Repo", get_repo_path(id: repo.id) %></th>
+          <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
         </tr>
         <tr>
           <td>Sample name</td>
