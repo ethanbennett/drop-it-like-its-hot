@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new,:create] do
   end
   post  "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   get   "/auth/google_oauth2/callback", to: "oauths#create"
 
   resource :phone_verification, only: [:new, :create]

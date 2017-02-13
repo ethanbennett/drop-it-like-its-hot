@@ -9,7 +9,9 @@
   </head>
 
   <body>
-    <%= render "layouts/top_navbar" %>
+    <% if current_user %>
+      <%= render "layouts/top_navbar" %>
+    <% end %>
     <%= render partial: "layouts/flash" %>
     <%= yield %>
   </body>
