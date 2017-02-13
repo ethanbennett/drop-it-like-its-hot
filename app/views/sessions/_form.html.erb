@@ -1,0 +1,13 @@
+<%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+      <%= form_tag login_path, method: "post" do %>
+        <div class="input-field">
+          <%= text_field_tag :email, nil, placeholder:"Email", type:"text", class:"validate" %>
+        </div>
+        <div class="input-field">
+          <%= text_field_tag :password, nil,placeholder: "Password", type:"text", class:"validate"%>
+        </div>
+        <%= link_to "Forgot your password?", new_phone_verification_path %>
+        <div class="input-field">
+          <%= submit_tag "Sign in" %>
+        </div>
+      <% end %>

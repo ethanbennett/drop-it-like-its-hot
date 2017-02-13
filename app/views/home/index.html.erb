@@ -31,23 +31,22 @@
     </div>
     <div class = "col s10">
     <% @repos.each do |repo| %>
+      <% if repo.type == "Folder" %>
       <table>
         <tr>
-          <th><%= repo.aws_url %></th>
+          <th><%= link_to repo.aws_url, repo_path(repo) %></th>
           <th><%= repo.updated_at %></th>
-          <th><%= link_to "Get Repo", get_repo_path(id: repo.id) %></th>
-        </tr>
-        <tr>
-          <td>Sample name</td>
-          <td>Sample modified</td>
-          <td>Sample members</td>
+          <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
         </tr>
       </table>
+      <% else %>
+        <%= repo.aws_url %>
+      <% end %>
     <% end %>
     </div>
   </div>
 <div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
-<%= form_for(@repo, :url => home_repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+<%= form_for(@repo, :url => repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
 
     <%= f.label :aws_url %>
     <%= f.file_field :aws_url %>

@@ -3,7 +3,7 @@ class OauthsController < ApplicationController
   def create
     user = User.from_omniauth(auth)
     session[:user_id] = user.id
-    redirect_to new_phone_verification_path
+    redirect_to home_index_path
   end
 
   private

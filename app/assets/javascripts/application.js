@@ -17,6 +17,14 @@
 //= require z.jquery.fileupload
 //= require_tree .
 
+$('document').ready(function(){
+  $('.send-verification').click(function(){
+    $('.get_verification').show();
+  });
+});
+
+
+
 $(function() {
   $('.directUpload').find("input:file").each(function(i, elem) {
     var fileInput    = $(elem);

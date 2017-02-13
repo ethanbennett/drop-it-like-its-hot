@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 FactoryGirl.define do
   factory :folder do
     name "Folder"
@@ -10,3 +11,10 @@ FactoryGirl.define do
     # end 
   end
 end
+=======
+# FactoryGirl.define do
+#   factory :folder do
+#     name "Folder"
+#   end
+# end
+>>>>>>> origin/dk-refactor-user

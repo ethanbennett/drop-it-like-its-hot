@@ -11,7 +11,7 @@ class User < ApplicationRecord
   attr_accessor :checkbox
 
   def self.from_omniauth(auth)
-    user = User.find_or_create_by(email: auth["info"]["email"])
+  user = User.find_or_create_by(email: auth["info"]["email"])
     user.first_name = auth["info"]["name"].split(" ").first
     user.last_name  = auth["info"]["name"].split(" ").last
     user.email      = auth["info"]["email"]

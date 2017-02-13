@@ -1,7 +1,11 @@
 <% @content.each do |repo| %>
+<<<<<<< HEAD
   <% if repo.type == "Folder" %>
     <%= link_to "#{repo.name}", home_repo_path(current_user, repo) %>
   <% else %>
     <%= repo.name %>
   <% end %>
+=======
+  
+>>>>>>> origin/dk-refactor-user
 <% end %>

@@ -1,4 +1,5 @@
 class Folder < Repo
-  has_many :folders
-  has_many :documents
+  has_many :repos, foreign_key: :repo_id
+  has_many :folders, -> (object) {where(type: 'Folder')}, foreign_key: :repo_id
+  has_many :documents, -> (object) {where(type: 'Document')}, foreign_key: :repo_id
 end
