@@ -13,10 +13,10 @@
       <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
       <%= form_tag login_path, method: "post" do %>
         <div class="input-field">
-          <%= text_field_tag :email %>
+          <%= text_field_tag :email, placeholder:"Email" %>
         </div>
         <div class="input-field">
-          <%= text_field_tag :password %>
+          <%= text_field_tag :password, placeholder:"Password" %>
         </div>
         <div class="input-field">
           <%= submit_tag "Sign in" %>
