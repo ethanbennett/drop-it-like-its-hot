@@ -1,23 +1,38 @@
-
-
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center"><%= image_tag("dropbox_logotype", class:"menu-logo") %></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
+  </div>
+</nav>
+<div class="test">
+  <div class="row">
+    <div class="col s6">
+    <%= image_tag("dropbox_possibility_box.png", class:"possibility-box") %>
+    </div>
+    <div class="col s3 login-info ">
+      <%= link_to "Sign in with Google", "/auth/google_oauth2", class: "btn" %>
+      <%= link_to "Sign in", login_path %>
 <%= form_for @user do |f| %>
-    <div class="input-field col s3">
+    <div class="input-field">
       <%= f.text_field :first_name, placeholder:"First name", type:"text", class:"validate"%>
     </div>
-    <div class="input-field col s3">
+    <div class="input-field">
       <%= f.text_field :last_name, placeholder:"Last name", type:"text", class:"validate"%>
     </div>
-    <div class="input-field col s3">
+    <div class="input-field">
       <%= f.email_field :email, placeholder:"Email", type:"text", class:"validate"%>
     </div>
-    <div class="input-field col s3">
+    <div class="input-field">
       <%= f.password_field :password, placeholder:"Password", type:"text", class:"validate"%>
     </div>
 
-    <div class="input-field col s3">
+    <div class="input-field">
       <p><%= f.check_box :checkbox, type:"checkbox", include_hidden: false, class:"filled-in", id:"filled-in-box" %> I agree to Dropbox terms.</p>
     </div>
-    <div class="input-field col s3">
+    <div class="input-field">
       <%= f.submit "Create an account" %>
     </div>
 <% end %>
+    </div>
+  </div>
+</div>
