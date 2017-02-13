@@ -1,11 +1,8 @@
 class ReposController < ApplicationController
 
-  def index
-    @content = current_user.repos.where(repo_id: current_repo)
-  end
-
   def show
-    @content = current_user.repos.where(repo_id: params[:id])
+    session[:repo_id] = params[:id]
+    redirect_to home_index_path
   end
 
   def create

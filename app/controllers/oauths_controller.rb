@@ -2,8 +2,12 @@ class OauthsController < ApplicationController
 
   def create
     user = User.from_omniauth(auth)
+    repo = user.repos.find_or_create_by(repo_id: nil)
+    repo.type = 'file'
+    repo.save
     session[:user_id] = user.id
-    redirect_to new_phone_verification_path
+    session[:repo_id] = repo.id
+    redirect_to home_index_path
   end
 
   private

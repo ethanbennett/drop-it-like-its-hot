@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_repos_path(user.id)
+      session[:repo_id] = user.repos.find_by(repo_id: nil).id
+      redirect_to home_index_path
       # redirect_to new_phone_verification_path
     else
       flash[:danger] = "Invalid email/password combination"

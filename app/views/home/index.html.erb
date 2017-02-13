@@ -33,7 +33,7 @@
     <% @repos.each do |repo| %>
       <table>
         <tr>
-          <th><%= repo.aws_url %></th>
+          <th><%= link_to repo.aws_url, repo_path(get_repo_path) %></th>
           <th><%= repo.updated_at %></th>
           <th><%= link_to "Get Repo", get_repo_path(id: repo.id) %></th>
         </tr>
