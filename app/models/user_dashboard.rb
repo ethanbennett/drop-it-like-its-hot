@@ -3,6 +3,7 @@ class UserDashboard
     @_user = details[:user]
   end
 
+<<<<<<< HEAD
   def user
     @_user
   end
@@ -21,6 +22,14 @@ class UserDashboard
 
   def email
     user.email
+=======
+  def fullname
+    "#{@_user.first_name} #{@_user.last_name}"
+  end
+
+  def email
+    @_user.email
+>>>>>>> 8cc4f9f135e725f89ac7b05bdc02ca7c17baf0ca
   end
 
   def used_space_percent

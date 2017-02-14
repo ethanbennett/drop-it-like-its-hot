@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
+<<<<<<< HEAD
 //= require jquery.ui.widget
 //= require z.jquery.fileupload
 //= require_tree .
@@ -101,3 +102,6 @@ $(function(){
     $('#change-username').show();
   });
 });
+
+//= require_tree .
+$(".dropdown-button").dropdown();

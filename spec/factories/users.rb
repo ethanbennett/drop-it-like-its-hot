@@ -18,7 +18,6 @@ FactoryGirl.define do
         end
       end
     end
-
   end
 
   factory :admin, class: User do
