@@ -5,6 +5,7 @@ FactoryGirl.define do
     email "test@test.com"
     image "link"
     password "password"
+    phone_number "7205564307"
     role 0
 
     factory :user_with_repos do
@@ -26,6 +27,7 @@ FactoryGirl.define do
     email "test@test.com"
     image "link"
     password "password"
+    phone_number "7205564307"
     role 1
   end
 end

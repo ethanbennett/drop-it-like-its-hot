@@ -1,7 +1,5 @@
-<h3>What's your email?</h3>
-
-<%= text_field :email, place_holder: "Email" %>
-
-<p class='send-verification waves-effect waves-light btn'>Send Verification Text</p>
-
-<%= text_field :verification_code, place_holder: "Verification code", class:'get-verification' %>
+<h3>Please enter your verification code below.</h3>
+<%= form_tag phone_verification_path, method: "post" do %>
+  <%= text_field_tag :verification_code %>
+  <%= submit_tag "Submit" %>
+<% end %>

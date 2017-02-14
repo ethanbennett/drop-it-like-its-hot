@@ -1,10 +1,9 @@
 class HomeController < ApplicationController
-
   def index
     @user_dashboard = UserDashboard.new(user: current_user)
     @repo = Repo.new
     @repos = Repo.where(repo_id: nil)
-    @s3_direct_post = Repo.set_s3_direct_post
+    @s3_direct_post = Upload.to_s3
   end
 
   def show
