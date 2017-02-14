@@ -4,7 +4,7 @@
       <div class="modal-content">
         <h4>Update User Name</h4>
         <div class = "input-field" >
-          <%= text_field_tag :first_name, nil, placeholder: "First Name", type: "text", class: "validate" %>
+          <%= text_field_tag :first_name, nil, placeholder: "First Name", type: "text", class: "validate", value: @user.first_name %>
         </div>
         <div class = "input-field" >
           <%= text_field_tag :last_name, nil, placeholder: "Last Name", type: "text", class: "validate" %>
@@ -12,6 +12,7 @@
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <%= submit_tag "Change name", class: "btn" %>
       </div>
     <% end %>
   </div>
