@@ -1,10 +1,17 @@
   <!-- Modal Structure -->
   <div id="change-username" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+    <%= form_tag user_path(@user), method: "put" do %>
+      <div class="modal-content">
+        <h4>Update User Name</h4>
+        <div class = "input-field" >
+          <%= text_field_tag :first_name, nil, placeholder: "First Name", type: "text", class: "validate" %>
+        </div>
+        <div class = "input-field" >
+          <%= text_field_tag :last_name, nil, placeholder: "Last Name", type: "text", class: "validate" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+      </div>
+    <% end %>
   </div>

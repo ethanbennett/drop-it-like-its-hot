@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get "/account", to: "account#index"
   get   "/login", to: "sessions#new"
   post  "/logins", to: "sessions#create"
-  resources :users, only: [:new,:create]
+
+  resource :phone_verification, only: [:new, :create]
+  resource :password_reset, only: [:new, :create, :edit, :update]
+  resources :users, only: [:new, :create, :update]
   resources :account, only: [:index]
   resources :home, only: [:index]
   resources :repos, only: [:create, :show]
