@@ -11,5 +11,4 @@ class HomeController < ApplicationController
     @repos = Repo.where(repo_id: nil)
     @s3_direct_post = Upload.to_s3
   end
-  end
 end
