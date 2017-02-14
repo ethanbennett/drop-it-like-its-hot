@@ -92,6 +92,9 @@ $(function(){
   $('.modal-trigger').click(function(){
     $('#change-username').show();
   });
+  $('.modal-close').click(function(){
+    $('.modal').hide();
+  });
 });
 
 //= require_tree .
