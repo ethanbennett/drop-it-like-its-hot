@@ -6,9 +6,8 @@ class ReposController < ApplicationController
   end
 
   def create
-    repo = Repo.new(repo_params)
-    current_user.repos << repo
-    current_repo.repos << repo
+    current_user.repos.create(repo_params)
+    current_repo.repos << repo if current_repo
     redirect_to home_index_path
   end
   

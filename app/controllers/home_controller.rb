@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  # before_action :set_s3_direct_post, only: [:index]
   def show
     @repo = Repo.new
     @repos = current_user.repos.where(repo_id: current_repo)

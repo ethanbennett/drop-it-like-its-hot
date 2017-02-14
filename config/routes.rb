@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new,:create]
   resources :account, only: [:index]
 
-  resources :home, only: [:index]
+  resources :home, only: [:index, :show]
   resources :repos, only: [:create, :show]
   resources :downloads, only: [:show]
   # get "/get_repo", to: "repos#get_repo"
