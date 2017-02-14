@@ -2,7 +2,7 @@ class ReposController < ApplicationController
 
   def show
     session[:repo_id] = params[:id]
-    redirect_to home_index_path
+    redirect_to home_path
   end
 
   def create

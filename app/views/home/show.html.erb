@@ -30,8 +30,8 @@
       </ul>
     </div>
     <div class = "col s10">
-    <% @repos.each do |repo| %>
       <table>
+    <% @repos.each do |repo| %>
       <% if repo.type == "Folder" %>
         <tr>
           <th><%= link_to repo.aws_url, repo_path(repo) %></th>
@@ -43,8 +43,8 @@
         <th><%= repo.updated_at %></th>
         <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
       <% end %>
-    </table>
     <% end %>
+    </table>
     </div>
   </div>
 <div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
