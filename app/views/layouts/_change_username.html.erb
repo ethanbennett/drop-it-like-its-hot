@@ -1,13 +1,13 @@
   <!-- Modal Structure -->
   <div id="change-username" class="modal">
-    <% form_for @user do |f| %>
+    <%= form_tag user_path(@user), method: "put" do %>
       <div class="modal-content">
-        <h4>Modal Header</h4>
+        <h4>Update User Name</h4>
         <div class = "input-field" >
-          <%= f.text_field :first_name, placeholder: "First Name", class: "validate" %>
+          <%= text_field_tag :first_name, nil, placeholder: "First Name", type: "text", class: "validate" %>
         </div>
         <div class = "input-field" >
-          <%= f.text_field :last_name, placeholder: "Last Name", class: "validate" %>
+          <%= text_field_tag :last_name, nil, placeholder: "Last Name", type: "text", class: "validate" %>
         </div>
       </div>
       <div class="modal-footer">
