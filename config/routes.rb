@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resource :phone_verification, only: [:new, :create]
   resource :password_reset, only: [:new, :create, :edit, :update]
-  resources :users, only: [:new,:create]
+  resources :users, only: [:new, :create, :update]
   resources :account, only: [:index]
 
   resources :home, only: [:index, :show]
