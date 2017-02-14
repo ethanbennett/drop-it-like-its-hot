@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_action :set_s3_direct_post, only: [:index]
 
   def index
+    @user_dashboard = UserDashboard.new(user: current_user)
     @repo = Repo.new
     @repos = Repo.where(repo_id: current_repo)
   end

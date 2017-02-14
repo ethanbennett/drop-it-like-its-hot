@@ -10,7 +10,7 @@
 
   <body>
     <% if current_user %>
-      <%= render "layouts/top_navbar" %>
+      <%= render "layouts/top_navbar", locals: {target: @user_dashboard} %>
     <% end %>
     <%= render partial: "layouts/flash" %>
     <%= yield %>

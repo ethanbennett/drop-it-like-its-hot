@@ -1,10 +1,12 @@
 class ReposController < ApplicationController
 
   def index
+    @user_dashboard = UserDashboard.new(user: current_user)
     @content = current_user.repos.where(repo_id: nil)
   end
 
   def show
+    @user_dashboard = UserDashboard.new(user: current_user)
     @content = current_user.repos.where(repo_id: params[:id])
   end
 
