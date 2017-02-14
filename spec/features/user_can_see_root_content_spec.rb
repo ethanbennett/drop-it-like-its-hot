@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "When a user logs in" do
+RSpec.describe "A user sees all non-nested content" do
   before do
     create(:user_with_repos)
     visit '/login'
@@ -9,7 +9,9 @@ RSpec.describe "When a user logs in" do
     click_on "Sign in"
   end
 
-  it "they see all non-nested content" do
+  it "once they've logged in" do
+    save_and_open_page
     expect(page).to have_link("Folder")
+    expect(page).to have_content("Document")
   end
 end

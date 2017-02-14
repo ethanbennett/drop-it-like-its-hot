@@ -6,12 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-<<<<<<< HEAD
-      redirect_to home_repos_path(user.id)
-      # redirect_to new_phone_verification_path
-=======
       redirect_to home_index_path
->>>>>>> origin/dk-refactor-user
     else
       flash[:danger] = "Invalid email/password combination"
       render :new

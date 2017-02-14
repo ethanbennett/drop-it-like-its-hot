@@ -13,11 +13,7 @@ describe "When a user clicks on sign in" do
 
     click_on "Sign in"
 
-<<<<<<< HEAD
-    expect(current_path).to eq home_repos_path(user)
-=======
     expect(current_path).to eq home_index_path
->>>>>>> origin/dk-refactor-user
   end
 
   scenario "they need to reenter their information" do
