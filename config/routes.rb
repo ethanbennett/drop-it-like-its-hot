@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get   "/auth/google_oauth2/callback", to: "oauths#create"
 
-  resources :phone_verification, only: [:new, :create]
+  resource :phone_verification, only: [:new, :create]
   resource :password_reset, only: [:new, :create, :edit, :update]
   resources :users, only: [:new,:create]
   resources :account, only: [:index]
