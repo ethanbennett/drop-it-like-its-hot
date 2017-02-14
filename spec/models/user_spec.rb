@@ -8,4 +8,8 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:role)}
     it { should define_enum_for(:role).with([:user, :admin]) }
   end
+
+  context "relationships" do
+    it {should have_many(:repos)}
+  end
 end

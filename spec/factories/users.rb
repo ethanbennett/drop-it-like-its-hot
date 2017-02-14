@@ -14,12 +14,7 @@ FactoryGirl.define do
     email "test@test.com"
     image "link"
     password "password"
+    phone_number "7205564307"
     role 1
   end
-
-  # factory :user_with_repos, class: User do
-  #   user
-  #   user.repos << create(:folder)
-  #   user.repos << create(:document)
-  # end
 end
