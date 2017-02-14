@@ -29,10 +29,6 @@ describe "When a user clicks on sign in" do
     click_on "Sign in"
 
     expect(current_path).to eq login_path
-    within ".nav-wrapper" do
-      expect(page).to have_link "#{user.first_name} #{user.last_name}"
-    end
-    expect(page).to have_content "Files"
-    expect(page).to have_content "Photos"
+    expect(page).to have_content "Invalid email/password combination"
   end
 end
