@@ -15,9 +15,6 @@
     <div id="profile" class="col s12 account-detail">
       <div class = "row account-name">
         <h2><%= @user_dashboard.fullname %> <%= link_to "Change", "#change-username", class: "modal-trigger waves-effect waves-light" %></h2>
-         <!-- Modal Trigger -->
-        <a class="modal-trigger waves-effect waves-light btn" href="#change-username">Change</a>
-        <button data-target="change-username" class="btn">Change</button>
         <%= render partial: "layouts/change_username" %>
 
       </div>

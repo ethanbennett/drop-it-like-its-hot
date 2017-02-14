@@ -16,11 +16,6 @@
 //= require jquery.ui.widget
 //= require z.jquery.fileupload
 //= require_tree .
-        
-          $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
 
 $(function() {
   $('.directUpload').find("input:file").each(function(i, elem) {
@@ -91,3 +86,10 @@ $(document).ready(function () {
         }
     });
 })
+
+//To show modals on account settings page
+$(function(){
+  $('.modal-trigger').click(function(){
+    $('#change-username').show();
+  });
+});
