@@ -6,11 +6,15 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_repos_path(user.id)
-      # redirect_to new_phone_verification_path
+      redirect_to home_index_path
     else
       flash[:danger] = "Invalid email/password combination"
       render :new
     end
+  end
+
+  def destroy
+    reset_session
+    redirect_to login_path
   end
 end

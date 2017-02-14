@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "When a user click on sign in" do
+describe "When a user clicks on sign in" do
   scenario "they can login" do
     user = create(:user)
     
@@ -13,7 +13,7 @@ describe "When a user click on sign in" do
 
     click_on "Sign in"
 
-    expect(current_path).to eq user_repos_path(user)
+    expect(current_path).to eq home_index_path
   end
 
   scenario "they need to reenter their information" do
@@ -29,5 +29,6 @@ describe "When a user click on sign in" do
     click_on "Sign in"
 
     expect(current_path).to eq login_path
+    expect(page).to have_content "Invalid email/password combination"
   end
 end
