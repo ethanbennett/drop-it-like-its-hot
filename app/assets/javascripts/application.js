@@ -94,3 +94,10 @@ $(document).ready(function () {
         }
     });
 })
+
+//To show modals on account settings page
+$(function(){
+  $('.modal-trigger').click(function(){
+    $('#change-username').show();
+  });
+});

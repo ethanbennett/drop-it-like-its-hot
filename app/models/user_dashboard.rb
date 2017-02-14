@@ -3,12 +3,24 @@ class UserDashboard
     @_user = details[:user]
   end
 
+  def user
+    @_user
+  end
+
   def fullname
-    "#{@_user.first_name} #{@_user.last_name}"
+    "#{first_name} #{last_name}"
+  end
+
+  def first_name
+    user.first_name
+  end
+
+  def last_name
+    user.last_name
   end
 
   def email
-    @_user.email
+    user.email
   end
 
   def used_space_percent
