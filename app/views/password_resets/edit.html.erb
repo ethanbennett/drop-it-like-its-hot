@@ -1,0 +1,5 @@
+<h3>Please enter a new password</h3>
+<%= form_for @user, url: password_reset_path do |f|%>
+  <%= f.password_field :password, placeholder: "Password" %>
+  <%= f.submit "Change password" %>
+<% end %>

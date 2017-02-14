@@ -3,13 +3,11 @@ class PhoneVerificationsController < ApplicationController
   end
 
   def create
-    #for production
-    #verification_code = CodeGenerator.generate
-    verification_code = 123
-    #MessageSender.send_code(params[:phone_number], verification code)
-    # byebug if params[:verification_code]
-    if params[:verification_code] == verification_code.to_s
-      redirect_to home_index_path
+    if session[:verification_code] == params[:verification_code]
+      redirect_to edit_password_reset_path
+    else
+      flash[:danger] = "You enterered an incorrect verification code"
+      render :new
     end
   end
 end

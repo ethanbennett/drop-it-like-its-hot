@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get   "/login", to: "sessions#new"
   post  "/login", to: "sessions#create"
   get   "/auth/google_oauth2/callback", to: "oauths#create"
-  resource :phone_verification, only: [:new, :create]
+  resource :phone_verification, only: [:show, :new, :create]
+  resource :password_reset, only: [:new, :create, :edit, :update]
   resources :users, only: [:new,:create]
   resources :account, only: [:index]
 

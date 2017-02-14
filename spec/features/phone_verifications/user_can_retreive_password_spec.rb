@@ -18,11 +18,11 @@ describe 'When a user visits the sign in page' do
 
     fill_in :verification_code, :with => "123"
 
-    expect(page).to have_content "Verification code"
-
     click_on "Submit"
 
-    fill_in :password, :with => "1234"
+    expect(page).to have_content "Please enter a new password"
+
+    fill_in "user[password]", :with => "1234"
 
     click_on "Change password"
 

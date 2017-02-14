@@ -19,7 +19,7 @@
 
 $('document').ready(function(){
   $('.send-verification').click(function(){
-    $('.get_verification').show();
+    $('#verification_code').show();
   });
 });
 

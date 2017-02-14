@@ -1,0 +1,5 @@
+<h3>What's your email?</h3>
+<%= form_tag password_reset_path, method: "post" do %>
+  <%= text_field_tag :email, nil, placeholder: "Email" %>
+  <%= submit_tag "Send Verification Text" %>
+<% end %>
