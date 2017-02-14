@@ -4,6 +4,7 @@ describe "When a user visits the landing page" do
   scenario "they can create an account" do
     visit root_path
 
+
     click_on "Sign in"
     expect(current_path).to eq(login_path)
     
