@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Folder, type: :model do
+RSpec.describe Document, type: :model do
   describe "relationships" do
-    it {should have_many(:folders)}
-    it {should have_many(:documents)}
-    it {should belong_to(:folder)}
+    it {should_not have_many(:folders)}
+    it {should_not have_many(:documents)}
   end
 end
