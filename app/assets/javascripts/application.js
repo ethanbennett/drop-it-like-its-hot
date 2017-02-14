@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
+<<<<<<< HEAD
 //= require jquery.ui.widget
 //= require z.jquery.fileupload
 //= require_tree .
@@ -86,3 +87,13 @@ $(document).ready(function () {
         }
     });
 })
+
+//To show modals on account settings page
+$(function(){
+  $('.modal-trigger').click(function(){
+    $('#change-username').show();
+  });
+});
+
+//= require_tree .
+$(".dropdown-button").dropdown();

@@ -9,8 +9,10 @@
   </head>
 
   <body>
-  <%= render partial: "layouts/flash" %>
-
+    <% if current_user %>
+      <%= render "layouts/top_navbar", locals: {target: @user_dashboard} %>
+    <% end %>
+    <%= render partial: "layouts/flash" %>
     <%= yield %>
   </body>
 </html>

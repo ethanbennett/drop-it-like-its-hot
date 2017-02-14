@@ -1,24 +1,3 @@
-<div class= "dropzone">
-<!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">three</a></li>
-    </ul>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <!-- Dropdown Trigger -->
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
   <div class = "container row">
     <div class = "col s2">
       <ul>
@@ -55,4 +34,33 @@
 
     <%= f.submit %>
   <% end %>
+</div>
+<div class = "container row">
+  <%= render "layouts/top_navbar" %><br><br><br>
+
+  <div class = "col s2">
+    <a href="#!" class="brand-logo"> <%= image_tag "dropbox_logo.png" %></a><br><br>
+    <ul>
+      <li><a href="#">Recent</a></li><br>
+      <li><a href="#">Files</a></li><br>
+      <li><a href="#">Team</a></li><br>
+      <li><a href="#">Paper</a></li><br>
+      <li><a href="#">Photos</a></li>
+    </ul>
+  </div>
+  <br><br><br>
+  <div class = "col s10">
+    <table>
+      <tr>
+        <th><b>Name</b></th>
+        <th><b>Modified</b></th>
+        <th><b>Members</b></th>
+      </tr>
+      <tr>
+        <td>Sample name</td>
+        <td>Sample modified</td>
+        <td>Sample members</td>
+      </tr>
+    </table>
+  </div>
 </div>
