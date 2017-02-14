@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     session[:repo_id] = nil
     @repo = Repo.new
     @repos = Repo.where(repo_id: nil)
-    @s3_direct_post = Repo.set_s3_direct_post
-    #set_upload_to_s3
+    @s3_direct_post = Upload.to_s3
+    
   end
 end
