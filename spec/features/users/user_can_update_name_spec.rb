@@ -12,10 +12,6 @@ RSpec.describe 'User can update name details' do
     end
 
     within("#change-username") do
-      # within(".input-field:nth-of-type(1)") do
-      #   expect(page).to have_content(user.first_name)
-      # end
-
       fill_in "first_name", with: new_first_name
       fill_in "last_name", with: new_last_name
 
