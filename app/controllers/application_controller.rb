@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :current_repo
-  before_action :set_user_dashboard
+  before_action :set_user_dashboard, :authorize!
 
   def current_user
     #possibly add in default new user, look into (null user object) 
@@ -14,5 +14,15 @@ class ApplicationController < ActionController::Base
 
   def set_user_dashboard
     @user_dashboard = UserDashboard.new(user: current_user)
+  end
+
+  def authorize!
+    unless authorized?
+      redirect_to root_url, danger: "You are not allowed to access this page"
+    end
+  end
+
+  def authorized?
+    Permission.new(current_user, params[:controller], params[:action]).authorized?
   end
 end
