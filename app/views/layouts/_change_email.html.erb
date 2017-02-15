@@ -1,0 +1,21 @@
+  <!-- Modal Structure -->
+  <div id="change-email" class="modal">
+    <%= form_tag user_path(@user), method: "put" do %>
+      <div class="modal-content">
+        <h4>Update <%= @user.email %></h4>
+        <div class = "new-email-check" >
+          <p></p>
+        </div>
+        <div class = "input-field" >
+          <%= email_field_tag :email, nil, placeholder: "New email", type: "text", class: "validate" %>
+        </div>
+        <div class = "input-field" >
+          <%= email_field_tag :email_confirm, nil, placeholder: "Confirm email", type: "text", class: "validate" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <%= submit_tag "Update email", class: "btn submit-new-email" %>
+      </div>
+    <% end %>
+  </div>
