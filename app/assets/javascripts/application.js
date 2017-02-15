@@ -89,13 +89,51 @@ $(document).ready(function () {
 
 //To show modals on account settings page
 $(function(){
-  $('.modal-trigger').click(function(){
+  $('.change-username-trigger').click(function(){
     $('#change-username').show();
   });
+  
+  $('.change-email-trigger').click(function(){
+    $('#change-email').show();
+  });
+  
+  $('.file-upload-trigger').click(function(){
+    $('#file-upload').show();
+  });
+  
   $('.modal-close').click(function(){
     $('.modal').hide();
   });
+
+  $('.submit-new-email').on('click', function( event ){
+    var newEmail = $('#email').val();
+    var newEmailConfirm = $('#email_confirm').val();
+    if (newEmail + newEmailConfirm == "") {
+      $('.new-email-check p').text('Email cannot be empty!!!');
+      event.preventDefault();
+    } else {
+      if (newEmail != newEmailConfirm) {
+        $('.new-email-check p').text('Check email spelling!');
+        event.preventDefault();
+      } else {
+        $('.new-email-check p').text('');
+      }
+    }
+  });
+
+  $('td').hover(function(){
+    $(this).parent().toggleClass('highlight-repo-item')
+  });
+
+
+  // $(':not(td)').click(function(){
+  //   $('.repo-context-menu').hide()
+  // });
+
+  $('td').click(function(){
+    $('.repo-context-menu').show()
+  });
+
 });
 
-//= require_tree .
 $(".dropdown-button").dropdown();

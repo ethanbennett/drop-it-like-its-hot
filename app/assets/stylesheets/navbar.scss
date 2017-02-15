@@ -1,0 +1,29 @@
+nav {
+  box-shadow: 0 0 0 0;
+  color: $dropbox-blue;
+  background-color: $white;
+  border-style: solid;
+  border-bottom-color: $lighter-cool-grey;
+  margin-bottom: 25px;
+}
+
+nav .brand-logo {
+  color: $dropbox-blue;
+}
+
+nav a {
+  color: $dropbox-blue;  
+}
+
+nav ul a {  
+  color: $dropbox-blue;  
+}
+
+.brand-logo img {
+  width: 36px;
+  box-sizing: content-box;
+}
+
+.dropdown-button {
+  color: #007ee5;
+}
