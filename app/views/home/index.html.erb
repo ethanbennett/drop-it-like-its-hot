@@ -15,7 +15,7 @@
       <div class = "repo-navbar right-align col s6 offset-s2">
         <ul class = "inline-list">
           <li><i class="material-icons">file_upload</i></li>
-          <li>Create Folder</li>
+          <li><i class="material-icons">create_new_folder</i></li>
         </ul>
       </div>
       <table>
@@ -47,12 +47,4 @@
     <% end %>
     </div>
   </div>
-<div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
-<%= form_for(@repo, :url => repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
-
-    <%= f.label :aws_url %>
-    <%= f.file_field :aws_url %>
-
-    <%= f.submit %>
-  <% end %>
-</div>
+<%= render partial: "file_upload" %>
