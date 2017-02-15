@@ -27,28 +27,30 @@
           <th>Name</th>
           <th>Modified</th>
         </tr>
-    <% @repos.each do |repo| %>
-      <% if repo.type == "Folder" %>
-        <tr>
-          <td><%= link_to repo.aws_url, repo_path(repo) %></td>
-          <td><%= repo.updated_at %></td>
-          <td>
-            <%= link_to download_path(id: repo.id) do %>
-              <i class="material-icons">file_download</i>
-            <% end %>
-          </td>
-        </tr>
-      <% else %>
-        <td><%= repo.aws_url %></td>
-        <td><%= repo.updated_at %></td>
-        <td>
-          <%= link_to download_path(id: repo.id) do %>
-            <i class="material-icons">file_download</i>
+        <% @repos.each do |repo| %>
+          <% if repo.type == "Folder" %>
+            <tr>
+              <td><%= link_to repo.aws_url, repo_path(repo) %></td>
+              <td><%= repo.updated_at %></td>
+              <td>
+                <%= link_to download_path(id: repo.id) do %>
+                  <i class="material-icons">file_download</i>
+                <% end %>
+              </td>
+            </tr>
+          <% else %>
+            <tr>
+              <td><%= repo.aws_url %></td>
+              <td><%= repo.updated_at %></td>
+              <td>
+                <%= link_to download_path(id: repo.id) do %>
+                  <i class="material-icons">file_download</i>
+                <% end %>
+              </td>
+            </tr>
           <% end %>
-        </td>
-      <% end %>
-    </table>
-    <% end %>
+        <% end %>
+      </table>
     </div>
   </div>
 
