@@ -95,6 +95,9 @@ $(function(){
   $('.change-email-trigger').click(function(){
     $('#change-email').show();
   });
+  $('.file-upload-trigger').click(function(){
+    $('#file-upload').show();
+  });
   $('.modal-close').click(function(){
     $('.modal').hide();
   });

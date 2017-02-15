@@ -14,7 +14,11 @@
     <div class = "col s10">
       <div class = "repo-navbar right-align col s6 offset-s2">
         <ul class = "inline-list">
-          <li><i class="material-icons">file_upload</i></li>
+          <li>
+            <%= link_to "#file-upload", class: "modal-trigger file-upload-trigger waves-effect waves-light" do %>
+              <i class="material-icons">file_upload</i>
+            <% end %>
+          </li>
           <li><i class="material-icons">create_new_folder</i></li>
         </ul>
       </div>
@@ -47,4 +51,7 @@
     <% end %>
     </div>
   </div>
+
+<%= render partial: "/layouts/file_upload" %>
+
 <%= render partial: "file_upload" %>
