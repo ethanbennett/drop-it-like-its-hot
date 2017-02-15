@@ -14,7 +14,7 @@ class ReposController < ApplicationController
   private
 
   def repo_params
-    params.require(:repo).permit(:aws_url)
+    params.require(:repo).permit(:aws_url, :password)
   end
 end
 
