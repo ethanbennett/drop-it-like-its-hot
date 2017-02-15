@@ -21,5 +21,13 @@ class User < ApplicationRecord
     user
   end
 
+  def storage_used
+    repos.count / file_limit
+  end
+
+  def file_limit
+    0.2
+  end
+
 end
 
