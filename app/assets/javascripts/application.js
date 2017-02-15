@@ -99,8 +99,8 @@ $(function(){
     $('.modal').hide();
   });
   $('.submit-new-email').on('click', function( event ){
-    var newEmail = $('#new_email').val();
-    var newEmailConfirm = $('#new_email_confirm').val();
+    var newEmail = $('#email').val();
+    var newEmailConfirm = $('#email_confirm').val();
     if (newEmail + newEmailConfirm == "") {
       $('.new-email-check p').text('Email cannot be empty!!!');
       event.preventDefault();

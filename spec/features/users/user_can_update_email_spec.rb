@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'User can update email' do
   let(:user) {create(:user)}
+  let(:updated_user) {User.find(user.id)}
   let(:new_email) {"New@new.com"}
 
-  scenario 'Through Change Email link from Profile tab' do
+  scenario 'When typed matching emails' do
     account_profile user
     old_email = user.email
 
@@ -13,8 +14,8 @@ RSpec.describe 'User can update email' do
     end
 
     within("#change-email") do
-      fill_in "new_email", with: new_email
-      fill_in "new_email_confirm", with: new_email
+      fill_in "email", with: new_email
+      fill_in "email_confirm", with: new_email
 
       click_on "Update email"
     end
@@ -23,7 +24,7 @@ RSpec.describe 'User can update email' do
 
     within(".account-email") do
       expect(page).to have_content(new_email)
-      expect(user.email).to eq(new_email)
+      expect(updated_user.email).to eq(new_email)
       expect(page).not_to have_content(old_email)
     end
   end
