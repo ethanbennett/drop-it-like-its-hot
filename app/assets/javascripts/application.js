@@ -98,6 +98,21 @@ $(function(){
   $('.modal-close').click(function(){
     $('.modal').hide();
   });
+  $('.submit-new-email').on('click', function( event ){
+    var newEmail = $('#new_email').val();
+    var newEmailConfirm = $('#new_email_confirm').val();
+    if (newEmail + newEmailConfirm == "") {
+      $('.new-email-check p').text('Email cannot be empty!!!');
+      event.preventDefault();
+    } else {
+      if (newEmail != newEmailConfirm) {
+        $('.new-email-check p').text('Check email spelling!');
+        event.preventDefault();
+      } else {
+        $('.new-email-check p').text('');
+      }
+    }
+  });
 });
 
 $(".dropdown-button").dropdown();
