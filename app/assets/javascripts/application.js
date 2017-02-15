@@ -121,17 +121,28 @@ $(function(){
     }
   });
 
+
+
+  // $(':not(td)').on('click', function(){
+  //   $('.repo-context-menu').hide();
+  //   console.log('lets hide it...')
+  // });
+
+  $('td').click(function(){
+    $('.repo-context-menu').show();
+    console.log('clicked on td...');
+  });
+
   $('td').hover(function(){
     $(this).parent().toggleClass('highlight-repo-item')
   });
 
-
-  // $(':not(td)').click(function(){
-  //   $('.repo-context-menu').hide()
-  // });
-
   $('td').click(function(){
-    $('.repo-context-menu').show()
+    $('tr').removeClass('selected-repo-item');
+    $(this).parent().addClass('selected-repo-item');
+    var link = $('.selected-repo-item #rurl').text();
+    $('#context-menu-download').attr('href', link);
+    debugger;
   });
 
 });

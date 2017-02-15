@@ -20,8 +20,10 @@
         <li><i class="material-icons">create_new_folder</i></li>
       </ul>
     </div>
-    <div class = "repo-context-menu col s12" hidden>
-        <i class="material-icons">file_download</i>
+    <div class = "repo-context-menu col s12">
+        <a id = "context-menu-download" href = "">
+          <i class="material-icons">file_download</i>
+        </a>
     </div>
     <table class = "repo-list" >
       <tr>
@@ -47,6 +49,8 @@
               <%= link_to download_path(id: repo.id) do %>
                 <i class="material-icons">file_download</i>
               <% end %>
+              <p id = "rid" hidden><%= repo.id %></p>
+              <p id = "rurl" hidden><%= download_path(id: repo.id) %></p>
             </td>
           </tr>
         <% end %>
