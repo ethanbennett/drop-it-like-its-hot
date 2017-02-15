@@ -20,7 +20,7 @@
     <% @repos.each do |repo| %>
       <% if repo.type == "Folder" %>
         <tr>
-          <td><%= link_to repo.aws_url, repo_path(repo) %></td>
+          <td><%= link_to repo.name, repo_path(repo) %></td>
           <td><%= repo.updated_at %></td>
           <td>
             <%= link_to download_path(id: repo.id) do %>
@@ -29,7 +29,7 @@
           </td>
         </tr>
       <% else %>
-        <td><%= repo.aws_url %></td>
+        <td><%= repo.name %></td>
         <td><%= repo.updated_at %></td>
         <td>
           <%= link_to download_path(id: repo.id) do %>
@@ -44,8 +44,8 @@
 <div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
 <%= form_for(@repo, :url => repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
 
-    <%= f.label :aws_url %>
-    <%= f.file_field :aws_url %>
+    <%= f.label :name %>
+    <%= f.file_field :name %>
 
     <%= f.submit %>
   <% end %>
