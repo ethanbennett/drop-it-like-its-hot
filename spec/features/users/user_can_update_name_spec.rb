@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'User can update name details' do
   let(:user) {create(:user)}
+  let(:new_first_name) {"NewFirst"}
+  let(:new_last_name) {"NewLast"}
   scenario 'Through model Change Name link from Profile tab' do
-    new_first_name = "NewFirst"
-    new_last_name = "NewLast"
     account_profile user
 
     within(".account-name") do
