@@ -92,15 +92,19 @@ $(function(){
   $('.change-username-trigger').click(function(){
     $('#change-username').show();
   });
+  
   $('.change-email-trigger').click(function(){
     $('#change-email').show();
   });
+  
   $('.file-upload-trigger').click(function(){
     $('#file-upload').show();
   });
+  
   $('.modal-close').click(function(){
     $('.modal').hide();
   });
+
   $('.submit-new-email').on('click', function( event ){
     var newEmail = $('#email').val();
     var newEmailConfirm = $('#email_confirm').val();
@@ -115,6 +119,10 @@ $(function(){
         $('.new-email-check p').text('');
       }
     }
+  });
+
+  $('td').hover(function(){
+    $(this).parent().toggleClass('highlight-repo-item')
   });
 });
 
