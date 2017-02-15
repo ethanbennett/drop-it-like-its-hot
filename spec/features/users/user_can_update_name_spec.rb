@@ -4,7 +4,8 @@ RSpec.describe 'User can update name details' do
   let(:user) {create(:user)}
   let(:new_first_name) {"NewFirst"}
   let(:new_last_name) {"NewLast"}
-  scenario 'Through model Change Name link from Profile tab' do
+
+  scenario 'Through Change Name link from Profile tab' do
     account_profile user
 
     within(".account-name") do
