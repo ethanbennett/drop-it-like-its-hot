@@ -4,7 +4,6 @@ describe "When a user visits the landing page" do
   scenario "they can create an account" do
     visit root_path
 
-
     click_on "Sign in"
     expect(current_path).to eq(login_path)
     
@@ -40,6 +39,9 @@ describe "When a user visits the landing page" do
   scenario "they need to check the agree box" do
     visit root_path
 
+    click_on "Sign in"
+    expect(current_path).to eq(login_path)
+    
     click_on "Create account"
 
     fill_in :user_first_name, :with => "Bob"
