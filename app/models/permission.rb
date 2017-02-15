@@ -10,6 +10,7 @@ class Permission
     if user.admin?
       return true
     elsif user.registered?
+      return true if controller == "users" && action.in?(%w(edit update))
       return true if controller == "sessions" && action == "destroy"
       return true if controller == "home" && action.in?(%w(index show))
       return true if controller == "account" && action == "index"
