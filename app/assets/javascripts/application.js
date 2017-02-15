@@ -124,6 +124,16 @@ $(function(){
   $('td').hover(function(){
     $(this).parent().toggleClass('highlight-repo-item')
   });
+
+
+  // $(':not(td)').click(function(){
+  //   $('.repo-context-menu').hide()
+  // });
+
+  $('td').click(function(){
+    $('.repo-context-menu').show()
+  });
+
 });
 
 $(".dropdown-button").dropdown();
