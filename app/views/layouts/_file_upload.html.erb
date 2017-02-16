@@ -1,7 +1,7 @@
   <!-- Modal Structure -->
   <div id="file-upload" class="modal">
     <div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
-      <%= form_for(@repo, :url => repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+      <%= form_for(@repo, :url => repos_path(@repo), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
         <div class="modal-content">
           <%= f.label "Password protect this document (optional):" %>
           <%= f.password_field :password %>
