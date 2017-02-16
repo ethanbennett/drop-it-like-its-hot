@@ -147,7 +147,6 @@ $(function(){
     $(this).parent().addClass('selected-repo-item');
     var link = $('.selected-repo-item #rurl').text();
     $('#context-menu-download').attr('href', link);
-    debugger;
   });
 
 });
