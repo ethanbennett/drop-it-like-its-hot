@@ -16,6 +16,8 @@ class ReposController < ApplicationController
       current_repo.repos << repo 
       return redirect_to home_path(current_repo)
     end
+    repo.generate_download_link
+    current_repo.repos << repo if current_repo
     redirect_to home_index_path
   end
 
@@ -34,17 +36,5 @@ class ReposController < ApplicationController
     def folder_params
       {name: params[:name].first, type: "Folder"}
     end
-
-    # def repo_params(type)
-    #   {name: name, aws_url: aws_url, type: type, password: password}
-    # end
-
-    # def name
-    #   params.require(:repo).require(:name).original_filename
-    # end
-
-    # def aws_url
-    #   params.permit(:aws_url)
-    # end
 end
 

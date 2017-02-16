@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_user_dashboard, :authorize!
 
   def current_user
-    #possibly add in default new user, look into (null user object) 
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
