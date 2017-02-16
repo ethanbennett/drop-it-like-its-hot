@@ -22,11 +22,9 @@ class ReposController < ApplicationController
   
   private
 
-
     def repo_params(type)
-      {name: name, aws_url: aws_url, type: type}
+      {name: name, aws_url: aws_url, type: type, password: password}
     end
-
 
     def name
       params.require(:repo).require(:name).original_filename
@@ -35,5 +33,5 @@ class ReposController < ApplicationController
     def aws_url
       params.require(:aws_url)
     end
-
 end
+

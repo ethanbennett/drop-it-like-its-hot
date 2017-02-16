@@ -30,5 +30,4 @@ FactoryGirl.define do
     phone_number "7205564307"
     role 1
   end
-
 end
