@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :update]
   resources :account, only: [:index]
   resources :home, only: [:index, :show]
-  resources :repos, only: [:create, :show, :destroy]
+  resources :repos, only: [:create, :show, :update, :destroy]
   resources :folders, only: [:create, :show, :destroy]
   resources :admins, only: [:show]
 

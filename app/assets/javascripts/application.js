@@ -105,11 +105,19 @@ $(function(){
   $('.file-upload-trigger').click(function(){
     $('#file-upload').show();
   });
+
+  $('.share-repo-trigger').click(function(){
+    $('#share-repo').show();
+    var link = '/repos/' + $('.selected-repo-item #rid').text();
+    var shareLink = $('.selected-repo-item #rroot').text() + 'downloads?code=' + $('.selected-repo-item #rcode').text();
+    $('#share-repo form').attr('action', link);
+    $('#share-repo #share_link').val(shareLink);
+  });
   
   $('.modal-close').click(function(){
     $('.modal').hide();
   });
-
+  
   $('.submit-new-email').on('click', function( event ){
     var newEmail = $('#email').val();
     var newEmailConfirm = $('#email_confirm').val();

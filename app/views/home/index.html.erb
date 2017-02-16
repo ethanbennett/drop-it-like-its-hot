@@ -20,6 +20,9 @@
       <a id = "context-menu-delete" href = "">
         <i class="material-icons">delete</i>
       </a>
+      <a id = "context-menu-share" href = "#share-repo" class = "modal-trigger share-repo-trigger waves-effect waves-light">
+        <i class="material-icons">cast</i>
+      </a>
   </div>
   <table class = "repo-list" >
     <tr>
@@ -46,6 +49,8 @@
               <i class="material-icons">file_download</i>
             <% end %>
             <p id = "rid" hidden><%= repo.id %></p>
+            <p id = "rcode" hidden><%= repo.code %></p>
+            <p id = "rroot" hidden><%= root_url %></p>
             <p id = "rurl" hidden><%= link_to "/downloads?code=#{repo.code}" %></p>
           </td>
           <td>
@@ -60,5 +65,4 @@
 </div>
 <%= render partial: "/layouts/file_upload" %>
 <%= render partial: "/layouts/create_folder" %>
-  
-  
+<%= render partial: "/layouts/share_repo" %>
