@@ -24,13 +24,16 @@ class ReposController < ApplicationController
 
 
     def document_params
-      {name: name, aws_url: aws_url, type: "Document"}
+      {name: name, aws_url: aws_url, type: "Document", password: "1"}
     end
 
     def folder_parems
-      params.require(:repo).permit()
+      params.require(:repo).permit(:name, :password)
     end
 
+    def repo_params(type)
+      {name: name, aws_url: aws_url, type: type, password: password}
+    end
 
     def name
       params.require(:repo).require(:name).original_filename
@@ -39,5 +42,5 @@ class ReposController < ApplicationController
     def aws_url
       params.require(:aws_url)
     end
-
 end
+

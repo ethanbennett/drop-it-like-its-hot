@@ -1,0 +1,15 @@
+  <!-- Modal Structure -->
+  <div id="file-upload" class="modal">
+    <div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
+      <%= form_for(@repo, :url => repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+        <div class="modal-content">
+          <h4>Upload file</h4>
+          <%= f.file_field :aws_url %>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+          <%= f.submit "Upload file", class: "btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
