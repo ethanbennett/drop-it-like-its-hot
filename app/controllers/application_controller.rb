@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize!
+    return true if session[:admin_id]
     unless authorized?
       redirect_to root_url, danger: "You are not allowed to access this page"
     end
