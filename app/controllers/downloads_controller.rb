@@ -1,4 +1,9 @@
 class DownloadsController < ApplicationController
+
+  def index
+    @repo = find_repo
+  end
+
   def show
     repo = current_user.repos.find(params[:id])
     if repo.password.nil? || password_check
@@ -10,5 +15,9 @@ private
 
   def password_check
     repo.password && repo.authenticate(params[:password])
+  end
+
+  def find_repo
+    Repo.find_by(download_link: params[:code])
   end
 end
