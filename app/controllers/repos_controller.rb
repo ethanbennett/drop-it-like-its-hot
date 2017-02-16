@@ -7,9 +7,9 @@ class ReposController < ApplicationController
 
   def create
     if aws_url
-      repo = current_user.repos.create(repo_params("Document"))
+      repo = current_user.repos.create(document_params)
     else
-      repo = current_user.repos.create(repo_params("Folder"))
+      repo = current_user.repos.create()
     end
     current_repo.repos << repo if current_repo
     redirect_to home_index_path
@@ -23,8 +23,12 @@ class ReposController < ApplicationController
   private
 
 
-    def repo_params(type)
-      {name: name, aws_url: aws_url, type: type}
+    def document_params
+      {name: name, aws_url: aws_url, type: "Document"}
+    end
+
+    def folder_parems
+      params.require(:repo).permit()
     end
 
 
