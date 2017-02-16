@@ -11,7 +11,11 @@ RSpec.describe "When a user clicks on the trash icon" do
     expect(page).to have_content "#{user.first_name} #{user.last_name}"
     expect(page).to have_content user.repos.first.name
 
-    click_on("delete", match: :first)
+    within("tr:nth-of-type(2)") do
+      within("td:nth-of-type(3)") do
+        click_on("delete")
+      end
+    end
 
     expect(page).to_not have_content user.repos.first.name
   end
