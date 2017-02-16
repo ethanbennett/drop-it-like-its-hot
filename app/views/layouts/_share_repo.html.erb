@@ -1,6 +1,6 @@
 <!-- Modal Structure -->
 <div id="share-repo" class="modal">
-  <%= form_tag repo_path(id: 0), method: "put" do %>
+  <%= form_tag repo_path(id: 9), method: "put" do %>
     <div class="modal-content">
       <h4>Share with others</h4>
       <div class = "input-field" >
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <%= submit_tag "Share", class: "btn modal-action modal-close waves-effect waves-green" %>
+      <%= submit_tag "Share", class: "btn modal-action modal-close" %>
     </div>
   <% end %>
 </div>
