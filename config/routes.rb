@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/account", to: "account#index"
   get   "/login", to: "sessions#new"
   post  "/logins", to: "sessions#create"
+  get "/download", to: "downloads#index"
 
   resource :phone_verification, only: [:new, :create]
   resource :password_reset, only: [:new, :create, :edit, :update]
