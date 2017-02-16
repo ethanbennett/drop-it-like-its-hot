@@ -25,7 +25,7 @@
     <% @repos.each do |repo| %>
       <% if repo.type == "Folder" %>
         <tr>
-          <td><%= link_to repo.aws_url, repo_path(repo) %></td>
+          <td><%= link_to repo.name, repo_path(repo) %></td>
           <td><%= repo.updated_at %></td>
           <td>
             <%= link_to download_path(id: repo.id) do %>
@@ -35,7 +35,7 @@
         </tr>
       <% else %>
         <tr>
-          <td><%= repo.aws_url %></td>
+          <td><%= repo.name %></td>
           <td><%= repo.updated_at %></td>
           <td>
             <%= link_to download_path(id: repo.id) do %>
