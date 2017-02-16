@@ -3,10 +3,10 @@
     <div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
       <%= form_for(@repo, :url => repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
         <div class="modal-content">
+          <%= f.label "Password protect this document (optional):" %>
+          <%= f.password_field :password %>
           <h4>Upload file</h4>
           <%= f.file_field :name %>
-          <%= f.label "Password (optional)" %>
-          <%= f.password_field :password %>
         </div>
         <div class="modal-footer">
           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
