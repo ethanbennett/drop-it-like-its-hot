@@ -44,6 +44,11 @@
             <p id = "rid" hidden><%= repo.id %></p>
             <p id = "rurl" hidden><%= download_path(id: repo.id) %></p>
           </td>
+          <td>
+            <%= link_to repo_path(id: repo.id), method: 'delete' do %>
+              <i class="material-icons">delete</i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     <% end %>

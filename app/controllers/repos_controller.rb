@@ -9,14 +9,14 @@ class ReposController < ApplicationController
     if aws_url
       repo = current_user.repos.create(document_params)
     else
-      repo = current_user.repos.create()
+      repo = current_user.repos.create(folder_parems)
     end
     current_repo.repos << repo if current_repo
     redirect_to home_index_path
   end
 
   def destroy
-    current_user.repos.delete(params[:id])
+    current_user.repos.destroy(params[:id])
     redirect_to home_index_path
   end
   
