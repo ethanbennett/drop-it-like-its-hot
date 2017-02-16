@@ -30,6 +30,7 @@ class ReposController < ApplicationController
 
     def update_params
       params.permit(:password)
+    end
 
     def repo_params
       {name: name, aws_url: aws_url, type: "Document", password: params[:password]}
