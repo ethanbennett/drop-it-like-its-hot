@@ -42,11 +42,11 @@
           <td><%= repo.name %></td>
           <td><%= repo.updated_at %></td>
           <td>
-            <%= link_to download_path(id: repo.id) do %>
+            <%= link_to "/downloads?code=#{repo.code}" do %>
               <i class="material-icons">file_download</i>
             <% end %>
             <p id = "rid" hidden><%= repo.id %></p>
-            <p id = "rurl" hidden><%= download_path(id: repo.id) %></p>
+            <p id = "rurl" hidden><%= link_to "/downloads?code=#{repo.code}" %></p>
           </td>
           <td>
             <%= link_to repo_path(id: repo.id), method: 'delete' do %>
