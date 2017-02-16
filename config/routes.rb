@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :account, only: [:index]
   resources :home, only: [:index, :show]
   resources :repos, only: [:create, :show, :destroy]
+  resources :folders, only: [:create, :show, :destroy]
   resources :downloads, only: [:show]
   resource :phone_verification, only: [:show, :new, :create]
   resource :password_reset, only: [:new, :create, :edit, :update]
