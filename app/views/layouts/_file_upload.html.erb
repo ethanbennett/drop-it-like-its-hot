@@ -5,6 +5,8 @@
         <div class="modal-content">
           <h4>Upload file</h4>
           <%= f.file_field :name %>
+          <%= f.label "Password (optional)" %>
+          <%= f.password_field :password %>
         </div>
         <div class="modal-footer">
           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
