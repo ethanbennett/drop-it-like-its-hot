@@ -24,6 +24,5 @@ class User < ApplicationRecord
   def storage_used
     repos.count / 0.2
   end
-
 end
 
