@@ -29,11 +29,11 @@ class ReposController < ApplicationController
 
 
     def name
-      params.require(:repo)[:name].original_filename
+      params.require(:repo).require(:name).original_filename
     end
 
     def aws_url
-      params.permit(:aws_url)
+      params.require(:aws_url)
     end
 
 end
