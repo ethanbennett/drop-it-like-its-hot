@@ -12,7 +12,6 @@ class ReposController < ApplicationController
       repo = current_user.repos.create()
     end
     repo.generate_download_link
-    binding.pry
     current_repo.repos << repo if current_repo
     redirect_to home_index_path
   end
