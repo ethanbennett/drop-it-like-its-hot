@@ -30,7 +30,7 @@ class ReposController < ApplicationController
 
 
     def aws_url
-      params.permit(:aws_url)
+      params.require(:aws_url)
     end
 
 end
