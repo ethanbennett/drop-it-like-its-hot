@@ -126,13 +126,6 @@ $(function(){
     }
   });
 
-
-
-  // $(':not(td)').on('click', function(){
-  //   $('.repo-context-menu').hide();
-  //   console.log('lets hide it...')
-  // });
-
   $('td').click(function(){
     $('.repo-context-menu').show();
     console.log('clicked on td...');

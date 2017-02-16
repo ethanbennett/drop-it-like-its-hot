@@ -1,0 +1,14 @@
+<!-- Modal Structure -->
+  <div id="change-email" class="modal">
+    <%= form_for(@repo, :method => 'post') do |f| %>
+      <div class="modal-content">
+        <div class = "input-field" >
+          <%= text_field :name, nil, placeholder: "Folder name", type: "text", class: "validate" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <%= f.submit "Create folder", class: "btn" %>
+      </div>
+    <% end %>
+  </div
