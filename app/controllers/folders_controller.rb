@@ -1,4 +1,4 @@
-class ReposController < ApplicationController
+class FoldersController < ApplicationController
 
   def show
     session[:repo_id] = params[:id]
@@ -7,7 +7,7 @@ class ReposController < ApplicationController
   end
 
   def create
-    repo = current_user.repos.create(repo_params)
+    repo = current_user.repos.create(folder_params)
     return redirect_to home_index_path unless current_repo
     current_repo.repos << repo 
     redirect_to home_path(current_repo)
@@ -20,17 +20,8 @@ class ReposController < ApplicationController
   
   private
 
-    def repo_params
-      {name: name, aws_url: aws_url, type: "Document", password: params[:password]}
-    end
-
-    def name
-      params.require(:repo).require(:name).original_filename
-    end
-
-
-    def aws_url
-      params.require(:aws_url)
+    def folder_params
+      {name: params[:name].first, type: "Folder"}
     end
 
 end
