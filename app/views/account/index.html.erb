@@ -14,8 +14,9 @@
     <div id="profile" class="col s12 account-detail">
       <div class = "row account-name">
         <h2><%= @user_dashboard.fullname %> <%= link_to "Change", "#change-username", class: "modal-trigger change-username-trigger waves-effect waves-light" %></h2>
-        <%= render partial: "layouts/change_username" %>
       </div>
+          <%= render partial: "layouts/change_email" %>
+        <%= render partial: "layouts/change_username" %>
       <div class = "row">
         <div class = "row col s3 account-photo">
           <h3>Account photo</h3>
@@ -32,7 +33,6 @@
             <%= @user_dashboard.email %>
           </div>
           <%= link_to "Change email", "#change-username", class: "modal-trigger change-email-trigger waves-effect waves-light" %>
-          <%= render partial: "layouts/change_email" %>
         </div>
       </div>
     </div>

@@ -1,8 +1,0 @@
-<div class="searchResults" data-query="<%= @s3_direct_post.url %>"></div>
-  <%= form_for(@repo, :url => repos_path(current_user), :method => 'post', html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
-    <%= f.label :aws_url %>
-    <%= f.file_field :aws_url %>
-
-    <%= f.submit %>
-  <% end %>
-</div>
