@@ -51,6 +51,7 @@
             <p id = "rid" hidden><%= repo.id %></p>
             <p id = "rurl" hidden><%= download_path(id: repo.id) %></p>
             <p id = "rcode" hidden><%= repo.code %></p>
+            <p id = "rroot" hidden><%= root_url %></p>
           </td>
           <td>
             <%= link_to repo_path(id: repo.id), method: 'delete' do %>
