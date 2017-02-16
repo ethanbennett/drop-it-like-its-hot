@@ -5,7 +5,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :email, :role, presence: true
 
   enum role: [ :registered, :admin ]
-  enum status: [ :enabled, :disabled ]
   
 
   attr_accessor   :agrees

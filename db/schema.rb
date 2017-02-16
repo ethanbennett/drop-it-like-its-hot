@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216093814) do
+ActiveRecord::Schema.define(version: 20170216101820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,9 @@ ActiveRecord::Schema.define(version: 20170216093814) do
     t.string   "password_digest"
     t.string   "image"
     t.integer  "role"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "phone_number"
-    t.integer  "status",          default: 0
   end
 
   add_foreign_key "repos", "repos"

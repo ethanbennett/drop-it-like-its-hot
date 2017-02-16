@@ -1,5 +1,5 @@
-            <%= link_to download_path(id: @repo.id) do %>
-              <i class="material-icons">file_download</i>
-            <% end %>
-            <p id = "rid" hidden><%= @repo.id %></p>
-            <p id = "rurl" hidden><%= download_path(id: @repo.id) %></p>
+<%= form_for :password, :url => shared_path(@repo), html:{ method: 'get'} do |f| %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit "Download File", class: "btn" %>
+<% end %>
