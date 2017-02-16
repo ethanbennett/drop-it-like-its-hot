@@ -8,11 +8,9 @@ class HomeController < ApplicationController
   end
 
   def index
-    # current_repo = nil 
     @user_dashboard = UserDashboard.new(user: current_user)
     @repo = current_user.repos.new
     @repos = Repo.where(repo_id: nil)
-    # @repos = current_repo.repos if current_repo
     @s3_direct_post = Upload.to_s3
   end
 end
