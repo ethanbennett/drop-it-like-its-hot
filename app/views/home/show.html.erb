@@ -18,38 +18,35 @@
         </ul>
       </div>
     </nav>
-  </header>
 
-  <div class = "container row">
-    <div class = "col s2">
-      <ul>
-        <li><a href="#">Recent</a></li>
-        <li><a href="#">Files</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Paper</a></li>
-        <li><a href="#">Photos</a></li>
-      </ul>
+    <div class = "container row">
+      <div class = "col s2">
+        <ul>
+          <li><a href="#">Recent</a></li>
+          <li><a href="#">Files</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Paper</a></li>
+          <li><a href="#">Photos</a></li>
+        </ul>
+      </div>
+      <div class = "col s10">
+      <% @repos.each do |repo| %>
+        <table>
+          <% if repo.type == "Folder" %>
+            <tr>
+              <th><%= link_to repo.name, repo_path(repo) %></th>
+              <th><%= repo.updated_at %></th>
+              <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
+            </tr>
+          <% else %>
+            <tr>
+              <th><%= repo.name %></th>
+              <th><%= repo.updated_at %></th>
+              <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
     </div>
-    <div class = "col s10">
-    <% @repos.each do |repo| %>
-      <table>
-      <% if repo.type == "Folder" %>
-        <tr>
-          <th><%= link_to repo.name, repo_path(repo) %></th>
-          <th><%= repo.updated_at %></th>
-          <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
-        </tr>
-      <% else %>
-        <th><%= repo.name %></th>
-        <th><%= repo.updated_at %></th>
-        <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
-      </tr>
-    <% else %>
-      <th><%= repo.aws_url %></th>
-      <th><%= repo.updated_at %></th>
-      <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
-    <% end %>
-  </table>
-  <% end %>
   </div>
 </div>
