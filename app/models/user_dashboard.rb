@@ -28,7 +28,7 @@ class UserDashboard
   end
 
   def used_space_percent
-    "25%"
+    @_user.storage_used
   end
 
   def two_step_status

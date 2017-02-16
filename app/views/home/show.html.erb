@@ -34,12 +34,12 @@
       <table>
       <% if repo.type == "Folder" %>
         <tr>
-          <th><%= link_to repo.aws_url, repo_path(repo) %></th>
+          <th><%= link_to repo.name, repo_path(repo) %></th>
           <th><%= repo.updated_at %></th>
           <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
         </tr>
       <% else %>
-        <th><%= repo.aws_url %></th>
+        <th><%= repo.name %></th>
         <th><%= repo.updated_at %></th>
         <th><%= link_to "Get Repo", download_path(id: repo.id) %></th>
       <% end %>
