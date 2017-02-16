@@ -14,7 +14,7 @@ class Permission
       return true if controller == "sessions" && action == "destroy"
       return true if controller == "home" && action.in?(%w(index show))
       return true if controller == "account" && action == "index"
-      return true if controller == "repos" && action.in?(%w(create show))
+      return true if controller == "repos" && action.in?(%w(create show destroy))
       return true if controller == "downloads" && action == "show"
       return true if controller == "landing" && action == "show"
     else
