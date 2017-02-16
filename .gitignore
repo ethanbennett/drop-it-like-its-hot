@@ -19,6 +19,9 @@
 # Ignore application configuration
 /config/application.yml
 
+# Ignore vcr cassettes 
+/spec/vcr_cassettes/download_from_aws.yml
+
 # Ignore SimpleCov files
 coverage
 
