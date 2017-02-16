@@ -1,5 +1,4 @@
 <%= form_for :password, :url => shared_path(@repo), html:{ method: 'get'} do |f| %>
-<p>If you don&rsquo;t have a password, just click &ldquo;Submit&rsquo;</p>
 <%= f.password_field :password %>
 <%= f.submit "Download file", class: "btn" %>
 <% end %>
