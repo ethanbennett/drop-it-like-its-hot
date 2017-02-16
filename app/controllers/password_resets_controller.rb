@@ -4,8 +4,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def create
-    # verification_code = CodeGenerator.generate.to_s
-    verification_code = "12345"
+    verification_code = CodeGenerator.generate.to_s
     session[:verification_code] = verification_code
     user = User.find_by(email: params[:email])
     unless user
