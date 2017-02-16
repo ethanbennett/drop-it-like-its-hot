@@ -8,9 +8,9 @@ class ReposController < ApplicationController
 
   def create
     repo = current_user.repos.create(repo_params)
-    redirect_to home_index_path unless current_repo
+    return redirect_to home_index_path unless current_repo
     current_repo.repos << repo 
-    return redirect_to home_path(current_repo)
+    redirect_to home_path(current_repo)
   end
 
   def destroy
@@ -21,7 +21,7 @@ class ReposController < ApplicationController
   private
 
     def repo_params
-      {name: name, aws_url: aws_url, type: type, password: password, type: "Document"}
+      {name: name, aws_url: aws_url, type: "Document", password: params[:password]}
     end
 
     def name
