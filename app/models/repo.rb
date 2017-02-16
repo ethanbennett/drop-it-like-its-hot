@@ -6,7 +6,7 @@ class Repo < ApplicationRecord
 
   def self.generate_download_link
     code = CodeGenerator.generate
-    Repo.update(download_link: "http://box-drop.herokuapp.com/download?code=#{code}")
+    self.update(download_link: "http://box-drop.herokuapp.com/download?code=#{code}")
   end
 
 end

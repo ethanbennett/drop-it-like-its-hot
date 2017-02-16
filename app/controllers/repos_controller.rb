@@ -11,6 +11,7 @@ class ReposController < ApplicationController
     else
       repo = current_user.repos.create(repo_params("Folder"))
     end
+    repo.generate_download_link
     current_repo.repos << repo if current_repo
     redirect_to home_index_path
   end
