@@ -1,23 +1,14 @@
-<div class = "container row">
-  <div class = "col s2">
-    <h2><a href="<%= root_path %>" class="brand-logo center">BoxDrop</a></h2>
-    <ul>
-      <li><a href="#">Recent</a></li>
-      <li><a href="#">Files</a></li>
-      <li><a href="#">Team</a></li>
-      <li><a href="#">Paper</a></li>
-      <li><a href="#">Photos</a></li>
-    </ul>
-  </div>
-  <div class = "col s10">
-    <div class = "repo-navbar right-align col s6 offset-s2">
-      <ul class = "inline-list">
-        <li>
-          <%= link_to "#file-upload", class: "modal-trigger file-upload-trigger waves-effect waves-light" do %>
-            <i class="material-icons">file_upload</i>
-          <% end %>
-        </li>
-        <li><i class="material-icons">create_new_folder</i></li>
+<div class= "dropzone">
+
+  <div class = "container row">
+    <div class = "col s2">
+      <h2><a href="<%= root_path %>" class="brand-logo center">BoxDrop</a></h2>
+      <ul>
+        <li><a href="#">Recent</a></li>
+        <li><a href="#">Files</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Paper</a></li>
+        <li><a href="#">Photos</a></li>
       </ul>
     </div>
     <div class = "repo-context-menu col s12">
@@ -59,6 +50,6 @@
         <% end %>
       <% end %>
     </table>
+    <% end %>
+    </div>
   </div>
-
-<%= render partial: "/layouts/file_upload" %>

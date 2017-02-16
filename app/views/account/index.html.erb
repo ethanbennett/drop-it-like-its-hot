@@ -39,7 +39,7 @@
     <div id="account" class="col s12 account-detail">
       <h2>Space</h2>
       <div class="progress">
-        <div class="determinate" style="width: <%= @user_dashboard.used_space_percent%>"></div>
+        <div class="determinate" style="width: <%= number_to_percentage(@user_dashboard.used_space_percent) %>"></div>
       </div>
     </div>
     <div id="security" class="col s12 account-detail">

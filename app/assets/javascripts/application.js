@@ -17,6 +17,7 @@
 //= require z.jquery.fileupload
 //= require_tree .
 
+$(document).ready(function () {
 $(function() {
   $('.directUpload').find("input:file").each(function(i, elem) {
     var fileInput    = $(elem);
@@ -53,11 +54,14 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
+        var code  = $(data.jqXHR.responseXML);
         var url   = '//' + form.data('host') + '/' + key;
 
         // create hidden field
-        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
-        form.append(input);
+
+        var file_info = $("<input />", { type:'hidden', name: 'aws_url', value:  url});
+        
+        $('form').children().append(file_info);
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);
@@ -68,6 +72,7 @@ $(function() {
       }
     });
   });
+});
 });
 
 $(document).ready(function () {
