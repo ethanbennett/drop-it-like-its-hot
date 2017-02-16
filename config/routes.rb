@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get   "/login", to: "sessions#new"
   post  "/logins", to: "sessions#create"
 
-  resources :shared, only: [:index]
+  resources :shared, only: [:show]
   resource :phone_verification, only: [:new, :create]
   resource :password_reset, only: [:new, :create, :edit, :update]
   resources :users, only: [:new, :create, :update]
