@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :account, only: [:index]
 
   resources :home, only: [:index, :show]
-  resources :repos, only: [:create, :show]
+  resources :repos, only: [:create, :show, :destroy]
   resources :downloads, only: [:show]
 
 end
