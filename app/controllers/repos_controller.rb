@@ -2,14 +2,19 @@ class ReposController < ApplicationController
 
   def show
     session[:repo_id] = params[:id]
-    redirect_to home_index_path
+    repo = current_user.repos.find(params[:id])
+    redirect_to home_path(repo)
   end
 
   def create
-    if aws_url
+    if params[:aws_url]
       repo = current_user.repos.create(document_params)
     else
-      repo = current_user.repos.create()
+      repo = current_user.repos.create(folder_params)
+    end
+    if current_repo
+      current_repo.repos << repo 
+      return redirect_to home_path(current_repo)
     end
     repo.generate_download_link
     current_repo.repos << repo if current_repo
@@ -17,7 +22,7 @@ class ReposController < ApplicationController
   end
 
   def destroy
-    current_user.repos.delete(params[:id])
+    current_user.repos.destroy(params[:id])
     redirect_to home_index_path
   end
   
@@ -25,23 +30,11 @@ class ReposController < ApplicationController
 
 
     def document_params
-      {name: name, aws_url: aws_url, type: "Document", password: "1"}
+      {name: params[:repo][:name].original_filename, aws_url: params[:aws_url], type: "Document", password: params[:password]}
     end
 
     def folder_params
-      params.require(:repo).permit(:name, :password)
-    end
-
-    def repo_params(type)
-      {name: name, aws_url: aws_url, type: type, password: password}
-    end
-
-    def name
-      params.require(:repo).require(:name).original_filename
-    end
-
-    def aws_url
-      params.require(:aws_url)
+      {name: params[:name].first, type: "Folder"}
     end
 end
 

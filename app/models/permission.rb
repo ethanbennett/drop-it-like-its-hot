@@ -24,7 +24,7 @@ class Permission
       return true if controller == "sessions" && action.in?(%w(new create))
       return true if controller == "password_resets" && action.in?(%w(new create edit update)) 
       return true if controller == "phone_verifications" && action.in?(%w(new create))
-      return true if controller == "downloads" && action == "index"
+      return true if controller == "downloads" && action.in?(%w(index show))
     end
   end
 
