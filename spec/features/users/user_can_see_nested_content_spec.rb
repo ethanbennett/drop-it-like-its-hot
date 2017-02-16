@@ -9,6 +9,11 @@ RSpec.describe "When a user visits the home index path" do
 
     expect(current_path).to eq home_index_path
     expect(page).to have_content "#{user.first_name} #{user.last_name}"
-    #add tests
+    expect(page).to have_content user.repos.first.name
+
+    click_on user.repos.first.name
+
+    expect(page).to have_content user.repos.first.repos.first.name
+    expect(page).to have_content user.repos.first.repos.last.name
   end
 end

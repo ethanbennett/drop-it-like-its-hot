@@ -62,11 +62,6 @@ RSpec.describe 'User can visit account details' do
           expect(page).to have_link("Change password")
           expect(page).to have_link("Forgot password?")
         end
-        within(".account-verification") do
-          expect(page).to have_content("Two-step verification")
-          expect(page).to have_content("Status")
-          expect(page).to have_link("click to enable")
-        end
       end
     end
   end #End of context Privacy tab

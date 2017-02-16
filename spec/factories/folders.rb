@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :folder do
-    name "Folder"
+    sequence :name do |n|
+      "example#{n}"
+    end
     user
   end
 end
