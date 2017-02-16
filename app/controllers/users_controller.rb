@@ -27,6 +27,8 @@ class UsersController < ApplicationController
     redirect_to account_index_path
   end
 
+
+
   private
 
   def user_params

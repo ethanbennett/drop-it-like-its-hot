@@ -20,12 +20,14 @@ class Permission
       return true if controller == "landing" && action == "show"
     else
       return true if controller == "landing" && action == "show"
-      return true if controller == "users" && action.in?(%w(new create))
-      return true if controller == "oauths" && action == "create"
-      return true if controller == "sessions" && action.in?(%w(new create))
       return true if controller == "password_resets" && action.in?(%w(new create edit update)) 
       return true if controller == "phone_verifications" && action.in?(%w(new create))
+      return true if controller == "users" && action.in?(%w(new create))
+      return true if controller == "landing" && action == "show"
+      return true if controller == "oauths" && action == "create"
+      return true if controller == "sessions" && action.in?(%w(new create))
       return true if controller == "downloads" && action.in?(%w(index show))
+      return true if controller == "landing" && action == "show"
     end
   end
 
