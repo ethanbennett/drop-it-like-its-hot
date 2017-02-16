@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'When a user visits the sign in page' do
-  xscenario 'they can retrieve their lost' do
+  scenario 'they can retrieve their lost' do
     user = create(:user)
     visit login_path
 
