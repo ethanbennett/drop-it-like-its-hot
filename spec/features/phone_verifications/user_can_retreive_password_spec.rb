@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe 'When a user visits the sign in page' do
   scenario 'they can retrieve their lost' do
-    Capybara.ignore_hidden_elements
     user = create(:user)
     visit login_path
 
@@ -27,5 +26,23 @@ describe 'When a user visits the sign in page' do
     click_on "Change password"
 
     expect(current_path).to eq login_path
+  end
+
+  scenario 'they are told they need to enter a valid email' do
+    user = create(:user)
+    visit login_path
+
+    click_on 'Forgot your password?'
+
+    expect(page).to have_content "What's your email?"
+    
+    expect(current_path).to eq new_password_reset_path
+    
+    fill_in :email, :with => "wrong@email.com"
+
+    click_on "Send Verification Text"
+
+    expect(current_path).to eq new_password_reset_path
+    expect(page).to have_content "Please enter a valid email"
   end
 end

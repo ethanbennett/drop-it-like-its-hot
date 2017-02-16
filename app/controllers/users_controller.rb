@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user][:role] = "user"
+    params[:user][:role] = "registered"
     params.require(:user).permit(:first_name, :last_name, :email, :password, :role)
   end
 
