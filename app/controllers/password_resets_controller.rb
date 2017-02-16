@@ -12,7 +12,7 @@ class PasswordResetsController < ApplicationController
       return redirect_to new_password_reset_path
     end
     session[:forgot_password_user_id] = user.id
-    MessageSender.send_code(user.phone_numbwer, verification_code)
+    MessageSender.send_code(user.phone_number, verification_code)
     redirect_to new_phone_verification_path
   end
 
