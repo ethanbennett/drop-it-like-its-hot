@@ -21,6 +21,13 @@ class ReposController < ApplicationController
     redirect_to home_index_path
   end
 
+  def update
+    update_repo = Repo.find(params[:id])
+    update_repo.update(update_params)
+    update_repo.save
+    redirect_to home_index_path
+  end
+
   def destroy
     current_user.repos.destroy(params[:id])
     redirect_to home_index_path
@@ -28,6 +35,9 @@ class ReposController < ApplicationController
   
   private
 
+    def update_params
+      params.permit(:password)
+    end
 
     def document_params
       {name: params[:repo][:name].original_filename, aws_url: params[:aws_url], type: "Document", password: params[:password]}

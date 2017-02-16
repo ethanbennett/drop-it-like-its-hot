@@ -105,11 +105,17 @@ $(function(){
   $('.file-upload-trigger').click(function(){
     $('#file-upload').show();
   });
+
+  $('.share-repo-trigger').click(function(){
+    $('#share-repo').show();
+    var link = '/repos/' + $('.selected-repo-item #rid').text();
+    $('#share-repo form').attr('action', link);
+  });
   
   $('.modal-close').click(function(){
     $('.modal').hide();
   });
-
+  
   $('.submit-new-email').on('click', function( event ){
     var newEmail = $('#email').val();
     var newEmailConfirm = $('#email_confirm').val();

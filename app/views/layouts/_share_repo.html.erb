@@ -1,0 +1,17 @@
+<!-- Modal Structure -->
+<div id="share-repo" class="modal">
+  <%= form_tag repo_path(id: 0), method: "put" do %>
+    <div class="modal-content">
+      <h4>Share with others</h4>
+      <div class = "input-field" >
+        <%= text_field_tag :share_link, type: "text", class: "validate" %>
+      </div>
+      <div class = "input-field" >
+        <%= password_field_tag :password, nil, placeholder: "password", type: "text", class: "validate" %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= submit_tag "Share", class: "btn modal-action modal-close waves-effect waves-green" %>
+    </div>
+  <% end %>
+</div>
