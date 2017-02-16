@@ -9,7 +9,7 @@ RSpec.describe 'User can update name details' do
     account_profile user
 
     within(".account-name") do
-      click_on "Change name"
+      click_on "Change"
     end
 
     within("#change-username") do

@@ -14,8 +14,9 @@
     <div id="profile" class="col s12 account-detail">
       <div class = "row account-name">
         <h2><%= @user_dashboard.fullname %> <%= link_to "Change", "#change-username", class: "modal-trigger change-username-trigger waves-effect waves-light" %></h2>
-        <%= render partial: "layouts/change_username" %>
       </div>
+          <%= render partial: "layouts/change_email" %>
+        <%= render partial: "layouts/change_username" %>
       <div class = "row">
         <div class = "row col s3 account-photo">
           <h3>Account photo</h3>
@@ -32,7 +33,6 @@
             <%= @user_dashboard.email %>
           </div>
           <%= link_to "Change email", "#change-username", class: "modal-trigger change-email-trigger waves-effect waves-light" %>
-          <%= render partial: "layouts/change_email" %>
         </div>
       </div>
     </div>
@@ -48,15 +48,6 @@
         <h3>Password</h3>
         <p><%= link_to "Change password", "#" %></p>
         <p><%= link_to "Forgot password?", "#" %></p>
-      </div>
-      <div class="col s12 account-verification">
-        <h3>Two-step verification</h3>
-        <div class="col s2">
-          <p>Status</p>
-        </div>
-        <div class="col s10">
-          <p><%= @user_dashboard.two_step_status %> <%= link_to "(click to enable)", "#" %></p>
-        </div>
       </div>
     </div>
     
