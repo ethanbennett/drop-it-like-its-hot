@@ -8,6 +8,7 @@ class ReposController < ApplicationController
 
   def create
     repo = current_user.repos.create(repo_params)
+    repo.generate_download_link
     return redirect_to home_index_path unless current_repo
     current_repo.repos << repo 
     redirect_to home_path(current_repo)
