@@ -1,7 +1,7 @@
 class DownloadsController < ApplicationController
 
   def index
-    @repo = find_repo
+    @repo = Repo.find_by(code: params[:code])
   end
 
   def show
@@ -15,9 +15,5 @@ private
 
   def password_check
     repo.password && repo.authenticate(params[:password])
-  end
-
-  def find_repo
-    Repo.find_by(download_link: params[:code])
   end
 end
