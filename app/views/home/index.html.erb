@@ -32,10 +32,10 @@
     <% @repos.each do |repo| %>
       <% if repo.type == "Folder" %>
         <tr>
-          <td><%= link_to repo.name, repo_path(repo) %></td>
+          <td><%= link_to repo.name, folder_path(repo) %></td>
           <td><%= repo.updated_at %></td>
           <td>
-            <%= link_to repo_path(id: repo.id), method: 'delete' do %>
+            <%= link_to folder_path(id: repo.id), method: 'delete' do %>
               <i class="material-icons">delete</i>
             <% end %>
           </td>
@@ -45,7 +45,7 @@
           <td><%= repo.name %></td>
           <td><%= repo.updated_at %></td>
           <td>
-            <%= link_to download_path(id: repo.id) do %>
+            <%= link_to "/downloads?code=#{repo.code}" do %>
               <i class="material-icons">file_download</i>
             <% end %>
             <p id = "rid" hidden><%= repo.id %></p>

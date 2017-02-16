@@ -14,9 +14,11 @@ class Permission
       return true if controller == "sessions" && action == "destroy"
       return true if controller == "home" && action.in?(%w(index show))
       return true if controller == "account" && action == "index"
-      return true if controller == "repos" && action.in?(%w(create show))
+      return true if controller == "repos" && action.in?(%w(create show destroy))
+      return true if controller == "folders" && action.in?(%w(create show destroy))
       return true if controller == "downloads" && action.in?(%w(index show))
       return true if controller == "landing" && action == "show"
+      return true if controller == "shared" && action == "show"
     else
       return true if controller == "landing" && action == "show"
       return true if controller == "users" && action.in?(%w(new create))
@@ -25,6 +27,7 @@ class Permission
       return true if controller == "password_resets" && action.in?(%w(new create edit update)) 
       return true if controller == "phone_verifications" && action.in?(%w(new create))
       return true if controller == "downloads" && action.in?(%w(index show))
+      return true if controller == "shared" && action == "show"
     end
   end
 

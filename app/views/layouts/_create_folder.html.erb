@@ -1,6 +1,6 @@
 <!-- Modal Structure -->
   <div id="change-email" class="modal">
-    <%= form_for(@repo, :method => 'post') do |f| %>
+    <%= form_for(@repo, :url => folders_path, :method => 'post') do |f| %>
       <div class="modal-content">
         <div class = "input-field" >
           <%= text_field :name, nil, placeholder: "Folder name", type: "text", class: "validate" %>

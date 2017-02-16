@@ -8,6 +8,7 @@ class HomeController < ApplicationController
   end
 
   def index
+    session[:repo_id] = nil
     @user_dashboard = UserDashboard.new(user: current_user)
     @repo = current_user.repos.new
     @repos = Repo.where(repo_id: nil)

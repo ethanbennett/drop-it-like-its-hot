@@ -5,3 +5,8 @@
   <% end %>
 </div>
 </div>
+<%= form_for :password, :url => shared_path(@repo), html:{ method: 'get'} do |f| %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit "Download File", class: "btn" %>
+<% end %>
